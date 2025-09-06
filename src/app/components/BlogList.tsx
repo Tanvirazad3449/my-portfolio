@@ -1,7 +1,8 @@
+'use client'
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { collection, getDocs, orderBy, query, Timestamp } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../../firebase";
+import Link from "next/link";
 
 export type Blog = {
   id: string;
@@ -36,7 +37,7 @@ export default function BlogList() {
       <ul className="list">
         {blogs.map((b) => (
           <li key={b.id} className="list-item">
-            <Link to={`/blog/${b.id}`} className="list-link">
+            <Link href={`/blog/${b.id}`} className="list-link">
               <span>{b.title}</span>
               {b.updatedAt && (
                 <time className="muted">

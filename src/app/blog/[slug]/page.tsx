@@ -1,10 +1,12 @@
+'use client'
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import { db } from "@/firebase";
 
 type BlogDoc = {
   title: string;
@@ -13,10 +15,11 @@ type BlogDoc = {
 };
 
 export default function BlogDetail() {
-  const { id } = useParams<{ id: string }>();
+      const params = useParams<{ slug: string }>()
+  const id = params.slug
   const [post, setPost] = useState<BlogDoc | null>(null);
   const [err, setErr] = useState<string | null>(null);
-
+console.log('this is id', id)
   useEffect(() => {
     if (!id) return;
     (async () => {
@@ -30,12 +33,12 @@ export default function BlogDetail() {
     })();
   }, [id]);
 
-  if (err) return <p>{err} — <Link to="/">Back</Link></p>;
+  if (err) return <p>{err} — <Link href="/">Back</Link></p>;
   if (!post) return <p>Loading…</p>;
 
   return (
     <article className="post">
-      <Link to="/" className="back">← Back to articles</Link>
+      <Link href="/" className="back">← Back to articles</Link>
       <h1>{post.title}</h1>
       {post.updatedAt && (
         <p className="muted">
