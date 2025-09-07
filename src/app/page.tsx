@@ -3,7 +3,6 @@
 import HeaderBar from "../components/custom/layout/HeaderBar";
 import SidebarNav from "../components/custom/layout/SidebarNav";
 import MainContent from "../components/custom/MainContent";
-import ContentPanel from "../components/custom/MainContent";
 import { SectionProvider, sections } from "../providers/SectionProvider";
 
 
