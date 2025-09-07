@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, Timestamp } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../lib/firebase";
 import Link from "next/link";
 
 export type Blog = {
@@ -12,6 +12,8 @@ export type Blog = {
 };
 
 export default function BlogList() {
+
+  //TODO: make this into a reusable hook for fetching data based on the pathName provided as params
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
 

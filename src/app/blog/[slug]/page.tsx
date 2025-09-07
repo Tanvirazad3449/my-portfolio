@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { db } from "@/firebase";
+import { db } from "@/lib/firebase";
 
 type BlogDoc = {
   title: string;

@@ -1,0 +1,143 @@
+.devto-article {
+  --dev-text: #111827;         /* gray-900 */
+  --dev-muted: #4b5563;        /* gray-600 */
+  --dev-border: #e5e7eb;       /* gray-200 */
+  --dev-bg-soft: #f9fafb;      /* gray-50 */
+  --dev-inline: #f3f4f6;       /* gray-100 */
+  color: var(--dev-text);
+  line-height: 1.7;
+}
+
+.devto-article h1, .devto-article h2, .devto-article h3,
+.devto-article h4, .devto-article h5, .devto-article h6 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 80px;
+}
+
+.devto-article h1 { font-size: 2rem; margin: 1.25em 0 .6em; }
+.devto-article h2 { font-size: 1.6rem; margin: 1.2em 0 .6em; }
+.devto-article h3 { font-size: 1.3rem; margin: 1.1em 0 .6em; }
+
+.devto-article p { margin: .8em 0; }
+.devto-article ul, .devto-article ol { padding-left: 1.3rem; margin: .9em 0;  list-style-type: disc; }
+.devto-article li { margin: .3em 0;  }
+
+.devto-article blockquote {
+  border-left: 4px solid var(--dev-border);
+  background: var(--dev-bg-soft);
+  color: var(--dev-muted);
+  padding: .75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 .5rem .5rem 0;
+}
+
+.devto-article hr {
+  border: 0;
+  border-top: 1px solid var(--dev-border);
+  margin: 2rem 0;
+}
+
+.devto-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow: auto;
+  display: block;
+}
+.devto-article th, .devto-article td {
+  border: 1px solid var(--dev-border);
+  padding: .5rem .75rem;
+}
+.devto-article th { background: var(--dev-bg-soft); text-align: left; }
+
+.devto-article a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Inline code */
+.devto-article .inline-code {
+  background: var(--dev-inline);
+  padding: .15rem .35rem;
+  border-radius: .375rem;
+  font-size: .95em;
+}
+
+/* Code blocks */
+.devto-pre {
+  color: #e5e7eb;
+  border: 1px solid #0f172a22;
+  padding: 1rem;
+  border-radius: .75rem;
+  overflow: auto;
+  line-height: 1.55;
+  font-size: .95rem;
+  margin: 1rem 0;
+}
+
+/* Heading anchor “#” like dev.to (appears on hover) */
+.devto-article .devto-anchor { text-decoration: none; }
+.devto-article .devto-hash {
+  opacity: 0;
+  margin-left: .4rem;
+  color: var(--dev-muted);
+  transition: opacity .15s ease-in-out;
+}
+.devto-article h1:hover .devto-hash,
+.devto-article h2:hover .devto-hash,
+.devto-article h3:hover .devto-hash,
+.devto-article h4:hover .devto-hash,
+.devto-article h5:hover .devto-hash,
+.devto-article h6:hover .devto-hash { opacity: 1; }
+/* Make the markdown box respect its parent's fixed size */
+.devto-article {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal overflow for general text and lists */
+.devto-article p,
+.devto-article li,
+.devto-article blockquote {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Images should never overflow horizontally */
+.devto-article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Wrap long lines in code blocks instead of horizontal scrolling */
+.devto-article pre {
+  white-space: pre-wrap !important;   /* allow wrapping */
+  overflow-x: hidden !important;      /* no horizontal scroll */
+  max-width: 100%;
+}
+
+/* Keep code inside <pre> wrapping as well */
+.devto-article pre code {
+  white-space: inherit !important;    /* inherit pre-wrap */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Inline code: tight and wrapping */
+.devto-article .inline-code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Optional: tables—wrap cell content and avoid blowing out width */
+.devto-article table {
+  table-layout: fixed;
+  width: 100%;
+}
+.devto-article th,
+.devto-article td {
+  word-break: break-word;
+}

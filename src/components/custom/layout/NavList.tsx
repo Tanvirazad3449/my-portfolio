@@ -30,15 +30,15 @@ export default function NavList({
             {active === section.key && (
               <Highlight
                 layoutId="highlight"
-                className="absolute inset-0 rounded-md bg-blue-100"
+                className="absolute inset-0 rounded-md bg-zinc-100"
               />
             )}
             <MotionButton
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               variant="ghost"
-              className={`w-full justify-start relative z-10 ${
-                active === section.key ? "text-blue-700 font-medium" : ""
+              className={`w-full justify-start cursor-pointer relative z-10 ${
+                active === section.key ? "text-black-700 font-medium" : ""
               }`}
               aria-current={active === section.key ? "page" : undefined}
               onClick={() => onSelect(section.key)}
