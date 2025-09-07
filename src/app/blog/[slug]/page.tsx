@@ -27,9 +27,17 @@ console.log('this is id', id)
         const snap = await getDoc(doc(db, "blogs", id));
         if (!snap.exists()) { setErr("Not found"); return; }
         setPost(snap.data() as BlogDoc);
-      } catch (e: any) {
-        setErr(e.message || "Failed to load");
-      }
+      } catch (e: unknown) {
+  const message =
+    e instanceof Error
+      ? e.message
+      : typeof e === "string"
+      ? e
+      : "Failed to load";
+
+  setErr(message);
+}
+
     })();
   }, [id]);
 

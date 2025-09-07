@@ -4,12 +4,13 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import DevToMarkdown from "./DevToMarkdown";
 import SectionCardItemMd from "./SectionCardItemMd";
+import { Timestamp } from "@firebase/firestore";
 
 export type ListItem = {
     id: string;
     title: string;
     teaser?: string | undefined;
-    publishedOn?: any;
+    publishedOn?: Timestamp;
     content?: string;
 };
 
