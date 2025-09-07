@@ -13,7 +13,7 @@ export default function MainContent() {
   const { data, loading, error } = useFirestoreCollection<BlogType>(active.toLowerCase());
   const [selectedItem, setSelectedItem] = useState({
     section: active,
-    mdContent: ""
+    content: ""
   })
   if (loading) return <p>Loading...</p>;
   if (error) return <p className="text-red-500">Error: {error.message}</p>;
@@ -31,8 +31,8 @@ export default function MainContent() {
           <CardHeader className="flex flex-row justify-between">
             <SectionHeader
               active={active}
-              showingDetail={(selectedItem.mdContent?.length ?? 0) > 0}
-              onBack={() => setSelectedItem({ section: active, mdContent: "" })}
+              showingDetail={(selectedItem.content?.length ?? 0) > 0}
+              onBack={() => setSelectedItem({ section: active, content: "" })}
             />
           </CardHeader>
           <CardContent className="grow overflow-auto">

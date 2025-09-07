@@ -1,19 +1,14 @@
-// Import the functions you need from the SDKs you need
 import { getFirestore } from "@firebase/firestore";
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCBXcQSavIeBblQ9HSQZgaQf6Nnq7V8SY8",
-  authDomain: "my-portfolio-tanvir.firebaseapp.com",
-  projectId: "my-portfolio-tanvir",
-  storageBucket: "my-portfolio-tanvir.firebasestorage.app",
-  messagingSenderId: "646292636645",
-  appId: "1:646292636645:web:3c44fd9b9f149a85a3250c"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET!,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID!,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);

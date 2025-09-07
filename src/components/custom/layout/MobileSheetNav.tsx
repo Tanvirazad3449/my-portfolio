@@ -16,7 +16,7 @@ import NavList from "./NavList";
 
 
 type Props = {
-  sections: SectionType[];
+  sections: string[];
   active: string;
   onSelect: (key: string) => void;
 };
@@ -34,13 +34,13 @@ export default function MobileSheetNav({ sections, active, onSelect }: Props) {
         </SheetTrigger>
 
         <SheetContent side="left" className="w-64">
-          <SheetHeader>
-            <SheetTitle>Navigation</SheetTitle>
-            <SheetDescription>Choose a section to view its content.</SheetDescription>
+          <SheetHeader className="display: hidden">
+            <SheetTitle></SheetTitle>
+            <SheetDescription></SheetDescription>
           </SheetHeader>
 
           {/* Content area per your example */}
-          <div className="grid flex-1 auto-rows-min gap-6 px-4">
+          <div className="grid flex-1 auto-rows-min gap-6 px-4 py-16">
             <NavList
               sections={sections}
               active={active}
@@ -56,11 +56,11 @@ export default function MobileSheetNav({ sections, active, onSelect }: Props) {
             />
           </div>
 
-          <SheetFooter>
+          {/* <SheetFooter>
             <SheetClose asChild>
               <Button variant="outline">Close</Button>
             </SheetClose>
-          </SheetFooter>
+          </SheetFooter> */}
         </SheetContent>
       </Sheet>
     </div>

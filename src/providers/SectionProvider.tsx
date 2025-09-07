@@ -5,7 +5,7 @@ import React, { createContext, useContext, useState } from "react";
 export type Section = { key: string; value: string };
 
 type SectionContextValue = {
-  sections: Section[];
+  sections: string[];
   active: string;
   setActive: (key: string) => void;
 };
@@ -17,7 +17,7 @@ export function SectionProvider({
   initialActive,
   children,
 }: {
-  initialSections: Section[];
+  initialSections: string[];
   initialActive: string;
   children: React.ReactNode;
 }) {
@@ -40,8 +40,4 @@ export function useSections() {
 
 
 
-export const sections: SectionType[] = [
-  { key: "Experience", value: "I have worked as a Frontend Developer building React and Next.js apps." },
-  { key: "Education", value: "Bachelor of Science in Computer Science, North South University." },
-  { key: "Blogs", value: "I write about JavaScript, React, and Web Performance on my dev blog." },
-];
+export const sections: string[] = ["About","Experience","Education","Blogs"];

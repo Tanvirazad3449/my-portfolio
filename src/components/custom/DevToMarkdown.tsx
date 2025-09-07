@@ -13,7 +13,7 @@ import "highlight.js/styles/github.css";
 import "./dev-to-markdown.css";
 
 type Props = {
-  content: string;
+  content: string | undefined;
   className?: string; // e.g. "prose max-w-none"
 };
 

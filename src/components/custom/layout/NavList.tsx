@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 type Props = {
-  sections: SectionType[];
+  sections: string[];
   active: string;
   onSelect: (key: string) => void;
   /** If true, consumers can layer a SheetClose wrapper around each item. */
@@ -26,8 +26,8 @@ export default function NavList({
     <nav className={className ?? "space-y-2 relative"}>
       {sections.map((section) => {
         const item = (
-          <div key={section.key} className="relative">
-            {active === section.key && (
+          <div key={section} className="relative">
+            {active === section && (
               <Highlight
                 layoutId="highlight"
                 className="absolute inset-0 rounded-md bg-zinc-100"
@@ -38,17 +38,17 @@ export default function NavList({
               whileTap={{ scale: 0.97 }}
               variant="ghost"
               className={`w-full justify-start cursor-pointer relative z-10 ${
-                active === section.key ? "text-black-700 font-medium" : ""
+                active === section ? "text-black-700 font-medium" : ""
               }`}
-              aria-current={active === section.key ? "page" : undefined}
-              onClick={() => onSelect(section.key)}
+              aria-current={active === section ? "page" : undefined}
+              onClick={() => onSelect(section)}
             >
-              {section.key}
+              {section}
             </MotionButton>
           </div>
         );
 
-        return renderItemWrapper ? renderItemWrapper(item, section.key) : item;
+        return renderItemWrapper ? renderItemWrapper(item, section) : item;
       })}
     </nav>
   );
