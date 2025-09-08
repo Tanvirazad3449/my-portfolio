@@ -9,7 +9,7 @@ function AboutContent({ children }: { children: ReactNode; }) {
                 alt="Tanvir Azad"
                 width={200}
                 height={200}
-                className="float-left mr-6 mb-4 rounded-lg"
+                className="float-left mr-6 mb-4 rounded-lg bg-accent"
             />
             {children}
         </div>
