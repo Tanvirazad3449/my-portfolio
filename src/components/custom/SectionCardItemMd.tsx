@@ -48,15 +48,15 @@ export default function SectionCardItemMd({
     <div className={`w-full flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4 ${className}`}>
       {/* Left: title + teaser */}
       <div className="flex-1 min-w-0">
-        <p className="text-lg sm:text-xl text-zinc-700 break-words">{title}</p>
-        <p className="text-zinc-500 text-sm sm:text-base max-w-full md:max-w-[66%] break-words">
+        <p className="text-lg sm:text-xl break-words">{title}</p>
+        <p className="text-sm sm:text-base max-w-full md:max-w-[66%] break-words">
           {teaser}
         </p>
       </div>
 
       {/* Right: date */}
       <div className="shrink-0 md:ml-auto text-left md:text-right">
-        <p className="text-zinc-500 text-xs sm:text-sm whitespace-nowrap">
+        <p className="text-xs sm:text-sm whitespace-nowrap">
           Published on{" "}
           <time dateTime={d ? d.toISOString() : ""}>{formatted || "—"}</time>
         </p>

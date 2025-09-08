@@ -1,14 +1,16 @@
+@import "../../app/variables.css";
+
 .devto-article * {
   margin-top: 0 !important;          /* physical */
   margin-block-start: 0 !important;   /* logical (Typography plugin uses this) */
 }
 
 .devto-article {
-  --dev-text: #111827;         /* gray-900 */
-  --dev-muted: #4b5563;        /* gray-600 */
-  --dev-border: #e5e7eb;       /* gray-200 */
-  --dev-bg-soft: #f9fafb;      /* gray-50 */
-  --dev-inline: #f3f4f6;       /* gray-100 */
+  --dev-text: var(--color-base-fg);         /* gray-900 */
+  --dev-muted: var(--color-base-muted);        /* gray-600 */
+  --dev-border: var(--color-base-border);       /* gray-200 */
+  --dev-bg-soft: var(--color-base-bg-soft);      /* gray-50 */
+  --dev-inline: var(--color-base-bg-soft);       /* gray-100 */
   color: var(--dev-text);
   line-height: 1.7;
 }
@@ -71,9 +73,10 @@
 
 /* Code blocks */
 .devto-pre {
-  color: #e5e7eb;
-  border: 1px solid #0f172a22;
+  color: var(--color-base-fg);
+  border: 1px solid var(--color-base-bg-soft);
   padding: 1rem;
+  background-color: var(--color-base-bg-soft);
   border-radius: .75rem;
   overflow: auto;
   line-height: 1.55;
@@ -81,20 +84,17 @@
   margin: 1rem 0;
 }
 
-/* Heading anchor “#” like dev.to (appears on hover) */
+/* /* Heading anchor “#” like dev.to (appears on hover) */
 .devto-article .devto-anchor { text-decoration: none; }
 .devto-article .devto-hash {
-  opacity: 0;
-  margin-left: .4rem;
-  color: var(--dev-muted);
-  transition: opacity .15s ease-in-out;
-}
+  display: none;
+} 
 .devto-article h1:hover .devto-hash,
 .devto-article h2:hover .devto-hash,
 .devto-article h3:hover .devto-hash,
 .devto-article h4:hover .devto-hash,
 .devto-article h5:hover .devto-hash,
-.devto-article h6:hover .devto-hash { opacity: 1; }
+.devto-article h6:hover .devto-hash { display: none; }
 /* Make the markdown box respect its parent's fixed size */
 .devto-article {
   height: 100%;
@@ -109,6 +109,7 @@
 .devto-article blockquote {
   overflow-wrap: anywhere;
   word-break: break-word;
+  
 }
 
 /* Images should never overflow horizontally */
@@ -122,6 +123,7 @@
   white-space: pre-wrap !important;   /* allow wrapping */
   overflow-x: hidden !important;      /* no horizontal scroll */
   max-width: 100%;
+  
 }
 
 /* Keep code inside <pre> wrapping as well */
@@ -129,6 +131,8 @@
   white-space: inherit !important;    /* inherit pre-wrap */
   word-break: break-word;
   overflow-wrap: anywhere;
+  background-color: var(--color-base-bg-soft);
+
 }
 
 /* Inline code: tight and wrapping */

@@ -50,7 +50,7 @@ export default function SectionCard({
                                 {data.map((item) => (
                                     <Card
                                         key={item.id}
-                                        className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium hover:bg-zinc-100"
+                                        className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium hover:bg-accent"
                                         onClick={() =>
                                             setSelectedItem({
                                                 section: active,

@@ -9,7 +9,7 @@ import { SectionProvider, sections } from "../providers/SectionProvider";
 export default function SidebarPage() {
   return (
     <SectionProvider initialSections={sections} initialActive={sections[0]}>
-      <div className="h-screen bg-gray-100 p-4 md:p-6 flex flex-col">
+      <div className="h-screen bg-background p-4 md:p-6 flex flex-col">
         <HeaderBar title="Tanvir Azad" />
         <div className="flex-1 min-h-0 flex gap-4">
           <SidebarNav />

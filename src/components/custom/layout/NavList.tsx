@@ -30,11 +30,11 @@ export default function NavList({
             {active === section && (
               <Highlight
                 layoutId="highlight"
-                className="absolute inset-0 rounded-md bg-zinc-100"
+                className="absolute inset-0 rounded-md bg-muted"
               />
             )}
             <MotionButton
-              whileHover={{ scale: 1.05 }}
+              // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               variant="ghost"
               className={`w-full justify-start cursor-pointer relative z-10 ${
