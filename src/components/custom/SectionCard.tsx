@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import DevToMarkdown from "./DevToMarkdown";
 import SectionCardItemMd from "./SectionCardItemMd";
 import { Timestamp } from "@firebase/firestore";
+import AboutContent from "./AboutContent";
+import { sections } from "@/providers/SectionProvider";
 
 export type ListItem = {
     id: string;
@@ -34,47 +36,68 @@ export default function SectionCard({
     setSelectedItem,
     className = "",
 }: Props) {
-    const showingDetail = selectedItem.section === active && (selectedItem.content?.length ?? 0) > 0;
+    const hasData = data?.length > 0;
+    const hasTitle = hasData && !!data[0].title;
+    const showingDetail = selectedItem.section === active && !!selectedItem.content;
 
-    return (
-        <div>
-            {
-                data && data.length > 0 && data[0].title ?
-                    <div className={`prose max-w-none ${className}`}>
-                        {showingDetail ? (
-                            <div className="mt-0">
-                                <DevToMarkdown content={selectedItem.content} className="prose max-w-none overflow-scroll" />
-                            </div>
-                        ) : (
-                            <div className="mt-0 space-y-4">
-                                {data.map((item) => (
-                                    <Card
-                                        key={item.id}
-                                        className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium hover:bg-accent"
-                                        onClick={() =>
-                                            setSelectedItem({
-                                                section: active,
-                                                content: item.content || "",
-                                            })
-                                        }
-                                    >
-                                        <SectionCardItemMd
-                                            title={item.title}
-                                            teaser={item.teaser}
-                                            publishedOn={item.publishedOn}
-                                        />
+    const showItemDetails = hasTitle && showingDetail;
+    const showItemListWithTitle = hasTitle && !showingDetail;
+    const showItemList = hasData && !showingDetail;
+    const showAboutContent = showItemList && active === sections[0];
 
-                                    </Card>
-                                ))}
-                            </div>
-                        )}
-                    </div>
+    if (showAboutContent) {
+        return (
+            <AboutContent>
+                {data.map(item => (<p key={item.id}>{item.content} <br/> <br/></p>))}
+            </AboutContent>
+        )
+    }
+    else if (showItemDetails) {
+        return (
+            <div className={`prose max-w-none ${className}`}>
+                <div className="mt-0">
+                    <DevToMarkdown content={selectedItem.content} className="prose max-w-none overflow-scroll" />
+                </div>
+            </div>
+        )
+    } 
+    else if (showItemListWithTitle) {
+        return (
+            <div className={`prose max-w-none ${className}`}>
 
-                    :
-                    <div>
-                        {data.map((item) => <DevToMarkdown key={item.id} content={item.content} className="prose max-w-none overflow-scroll" />)}
-                    </div>
-            }
-        </div>
-    );
+                <div className="mt-0 space-y-4">
+                    {data.map((item) => (
+                        <Card
+                            key={item.id}
+                            className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium hover:bg-accent"
+                            onClick={() =>
+                                setSelectedItem({
+                                    section: active,
+                                    content: item.content || "",
+                                })
+                            }
+                        >
+                            <SectionCardItemMd
+                                title={item.title}
+                                teaser={item.teaser}
+                                publishedOn={item.publishedOn}
+                            />
+
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        )
+    } 
+    else if (showItemList) {
+        return (
+            <div>
+                {data.map((item) => <DevToMarkdown key={item.id} content={item.content} className="prose max-w-none overflow-scroll" />)}
+            </div>
+        )
+    } 
+    else {
+        return null
+    }
+
 }

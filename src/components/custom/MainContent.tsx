@@ -31,7 +31,7 @@ export default function MainContent() {
           <CardHeader className="flex flex-row justify-between">
             <SectionHeader
               active={active}
-              showingDetail={(selectedItem.content?.length ?? 0) > 0}
+              showingDetail={(selectedItem.content?.length ?? 0) > 0 && active === selectedItem.section}
               onBack={() => setSelectedItem({ section: active, content: "" })}
             />
           </CardHeader>
