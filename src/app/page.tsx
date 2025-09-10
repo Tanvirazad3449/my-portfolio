@@ -1,5 +1,6 @@
 "use client";
 
+import RightSidebar from "@/components/custom/layout/RightSidebar";
 import HeaderBar from "../components/custom/layout/HeaderBar";
 import SidebarNav from "../components/custom/layout/SidebarNav";
 import MainContent from "../components/custom/MainContent";
@@ -16,6 +17,8 @@ export default function SidebarPage() {
           <main className="flex-1 min-h-0">
             <MainContent/>
           </main>
+                    <RightSidebar />
+
         </div>
       </div>
     </SectionProvider>

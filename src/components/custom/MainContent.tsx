@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
 import { useSections } from "@/providers/SectionProvider";
 import { useFirestoreCollection } from "@/data/useFirestoreCollection";
 import { useState } from "react";
@@ -43,6 +43,7 @@ export default function MainContent() {
               setSelectedItem={setSelectedItem}
             />
           </CardContent>
+          
         </Card>
       </motion.div>
     </AnimatePresence>

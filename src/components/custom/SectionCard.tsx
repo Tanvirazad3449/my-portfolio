@@ -14,6 +14,7 @@ export type ListItem = {
     teaser?: string | undefined;
     publishedOn?: Timestamp;
     content?: string;
+    subtext?: string;
 };
 
 export type SelectedItem = {
@@ -47,9 +48,15 @@ export default function SectionCard({
 
     if (showAboutContent) {
         return (
-            <AboutContent>
-                {data.map(item => (<p key={item.id}>{item.content} <br/> <br/></p>))}
+            
+            <div className={`prose max-w-none ${className}`}>
+                <div className="mt-0">
+                    <AboutContent>
+                <p className="mb-4">{data[0]?.subtext}</p>
             </AboutContent>
+                    <DevToMarkdown content={data[0]?.content} className="prose max-w-none overflow-scroll" />
+                </div>
+            </div>
         )
     }
     else if (showItemDetails) {

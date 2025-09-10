@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 function AboutContent({ children }: { children: ReactNode; }) {
     const [imageLoaded, setImageLoaded] = useState(false);
-
     return (
         <div className="prose max-w-none gap-9">
             <motion.div
@@ -15,7 +14,7 @@ function AboutContent({ children }: { children: ReactNode; }) {
                     ease: "easeOut",
                     delay: 0.3
                 }}
-                className="float-left mr-6 mb-4"
+                className="md:float-left sm:flex sm:flex-col mr-6 mb-4"
             >
                 <Image
                     src="/tanvir.webp"

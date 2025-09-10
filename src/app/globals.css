@@ -73,7 +73,8 @@
   --accent-foreground: var(--color-base-accent);
 
   --destructive: oklch(0.577 0.245 27.325);
---text-primary-foreground: var(--color-base-fg);
+  --text-primary-foreground: var(--color-base-fg);
+  --text-hover: var(--color-base-accent);
   --border: var(--color-base-border);
   --input: var(--color-base-border);
   --ring: var(--color-base-ring);
