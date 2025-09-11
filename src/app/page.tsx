@@ -15,9 +15,9 @@ export default function SidebarPage() {
         <div className="flex-1 min-h-0 flex gap-4">
           <SidebarNav />
           <main className="flex-1 min-h-0">
-            <MainContent/>
+            <MainContent />
           </main>
-                    <RightSidebar />
+          <RightSidebar />
 
         </div>
       </div>

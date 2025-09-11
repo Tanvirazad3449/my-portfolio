@@ -28,12 +28,11 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -61,23 +60,20 @@
   --popover-foreground: var(--color-base-fg);
 
   --primary: var(--color-base-fg);
+  --primary-hover: var(--color-base-fg-hover);
   --primary-foreground: var(--color-base-bg);
 
-  --secondary: var(--color-base-muted);
   --secondary-foreground: var(--color-base-accent);
 
-  --muted: var(--color-base-muted);
-  --muted-foreground: var(--color-base-fg);
-
-  --accent: var(--color-base-muted);
+  --accent: var(--color-base-accent);
   --accent-foreground: var(--color-base-accent);
 
   --destructive: oklch(0.577 0.245 27.325);
   --text-primary-foreground: var(--color-base-fg);
   --text-hover: var(--color-base-accent);
+  --hover-color: var(--color-base-fg-hover);
   --border: var(--color-base-border);
-  --input: var(--color-base-border);
-  --ring: var(--color-base-ring);
+  --input: var(--color-base-accent);
 
   --chart-1: var(--color-chart-1);
   --chart-2: var(--color-chart-2);
@@ -89,10 +85,8 @@
   --sidebar-foreground: var(--color-base-fg);
   --sidebar-primary: var(--color-base-accent);
   --sidebar-primary-foreground: var(--color-base-bg);
-  --sidebar-accent: var(--color-base-muted);
   --sidebar-accent-foreground: var(--color-base-accent);
-  --sidebar-border: var(--color-base-border);
-  --sidebar-ring: var(--color-base-ring);
+  --sidebar-border: var(--color-base-accent);
 }
 
 

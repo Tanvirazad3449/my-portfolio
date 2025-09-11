@@ -46,7 +46,7 @@ function ContactList() {
           href={href}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="flex items-center gap-3 transition-colors hover:text-accent-foreground"
+          className="flex items-center gap-3 transition-colors"
         >
           <Icon className="w-5 h-5" />
           <span>{label}</span>
@@ -83,7 +83,7 @@ export function ContactSidebar() {
 export default function RightSidebar() {
 
   return (
-    <div className="hidden md:flex p-6 rounded-2xl shadow-lg flex-col gap-6 sticky top-6">
+    <div className="hidden md:flex p-6 rounded-2xl border flex-col gap-6 sticky top-6">
 
       <ContactList />
     </div>

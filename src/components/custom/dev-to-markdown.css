@@ -8,9 +8,7 @@
 .devto-article {
   --dev-text: var(--color-base-fg);         /* gray-900 */
   --dev-muted: var(--color-base-muted);        /* gray-600 */
-  --dev-border: var(--color-base-border);       /* gray-200 */
-  --dev-bg-soft: var(--color-base-bg-soft);      /* gray-50 */
-  --dev-inline: var(--color-base-bg-soft);       /* gray-100 */
+  --dev-border: var(--color-base-accent);       /* gray-200 */
   color: var(--dev-text);
   line-height: 1.7;
 }
@@ -32,7 +30,7 @@
 
 .devto-article blockquote {
   border-left: 4px solid var(--dev-border);
-  background: var(--dev-bg-soft);
+  /* background: #FFFFFF; */
   color: var(--dev-fg);
   padding: .75rem 1rem;
   margin: 1rem 0;
@@ -56,7 +54,7 @@
   border: 1px solid var(--dev-border);
   padding: .5rem .75rem;
 }
-.devto-article th { background: var(--dev-bg-soft); text-align: left; }
+.devto-article th { background: var(--dev-bg); text-align: left; }
 
 .devto-article a {
   text-decoration: underline;
@@ -65,7 +63,7 @@
 
 /* Inline code */
 .devto-article .inline-code {
-  background: var(--dev-inline);
+  /* background: #FFFFFF; */
   padding: .15rem .35rem;
   border-radius: .375rem;
   font-size: .95em;
@@ -74,9 +72,9 @@
 /* Code blocks */
 .devto-pre {
   color: var(--color-base-fg);
-  border: 1px solid var(--color-base-bg-soft);
+  border: 1px solid var(--color-base-accent);
   padding: 1rem;
-  background-color: var(--color-base-bg-soft);
+  background-color: #FFFFFF;
   border-radius: .75rem;
   overflow: auto;
   line-height: 1.55;
@@ -101,6 +99,7 @@
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  
 }
 
 /* Prevent horizontal overflow for general text and lists */
@@ -109,7 +108,8 @@
 .devto-article blockquote {
   overflow-wrap: anywhere;
   word-break: break-word;
-  
+    /* background-color: #FFFFFF; */
+
 }
 
 /* Images should never overflow horizontally */
@@ -131,7 +131,7 @@
   white-space: inherit !important;    /* inherit pre-wrap */
   word-break: break-word;
   overflow-wrap: anywhere;
-  background-color: var(--color-base-bg-soft);
+  background-color: #FFFFFF;
 
 }
 
@@ -139,6 +139,7 @@
 .devto-article .inline-code {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  
 }
 
 /* Optional: tables—wrap cell content and avoid blowing out width */

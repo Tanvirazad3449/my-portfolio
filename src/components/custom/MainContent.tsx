@@ -27,7 +27,7 @@ export default function MainContent() {
         transition={{ duration: 0.25 }}
         className="h-full"
       >
-        <Card className="h-full rounded-2xl shadow-xl border-0 overflow-hidden flex flex-col">
+        <Card className="h-full rounded-2xl border overflow-hidden flex flex-col shadow-none">
           <CardHeader className="flex flex-row justify-between">
             <SectionHeader
               active={active}

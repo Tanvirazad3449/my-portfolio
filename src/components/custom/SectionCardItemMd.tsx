@@ -45,7 +45,7 @@ export default function SectionCardItemMd({
   const formatted = formatDate(publishedOn, locale);
 
   return (
-    <div className={`w-full flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4 ${className}`}>
+    <div className={`w-full flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4 shadow-none ${className}`}>
       {/* Left: title + teaser */}
       <div className="flex-1 min-w-0">
         <p className="text-lg sm:text-xl break-words">{title}</p>

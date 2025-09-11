@@ -9,20 +9,18 @@ type Props = {
   active: string;
   showingDetail: boolean;        // true when selectedItem.content.length > 0
   onBack: () => void;            // e.g. () => setSelectedItem({ section: active, content: "" })
-  className?: string;
 };
 
 export default function SectionHeader({
   active,
   showingDetail,
   onBack,
-  className = "",
 }: Props) {
   return showingDetail ? (
     <Button
       variant="ghost"
       size="default"
-      className={`cursor-pointer ${className}`}
+      className={`cursor-pointer hover:text-primary-hover`}
       aria-label={`Back to ${active}`}
       onClick={onBack}
     >
@@ -30,6 +28,6 @@ export default function SectionHeader({
       Back to {active}
     </Button>
   ) : (
-    <CardTitle className={`text-2xl font-bold ${className}`}>{active}</CardTitle>
+    <CardTitle className={`text-2xl font-bold`}>{active}</CardTitle>
   );
 }
