@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tanvir Azad — Portfolio
 
-## Getting Started
+A modern, animated portfolio built with **Next.js (App Router) + TypeScript**, styled with **Tailwind CSS** and **shadcn/ui**, and themed via CSS variables (light / dark / forest). Page and content transitions are powered by **Framer Motion**.
 
-First, run the development server:
+---
 
+## ✨ Features
+
+- **Next.js (App Router)** with TypeScript
+- **Tailwind CSS** utility-first styling
+- **shadcn/ui** components (Radix primitives) — e.g. `Select`, `Card`, `Skeleton`
+- **Theming** via CSS custom properties and class-based themes (`light`, `dark`, `forest`)
+- **Framer Motion** transitions with `AnimatePresence`
+- Compact **Theme Switcher** using a shadcn `Select`
+
+---
+
+## 🧱 Tech Stack
+
+- **Framework**: Next.js + TypeScript
+- **Styling**: Tailwind CSS, CSS variables
+- **UI**: shadcn/ui (Radix UI primitives)
+- **Animation**: Framer Motion
+
+---
+
+## 🚀 Getting Started
+
+### 1) Install dependencies
 ```bash
+pnpm install
+# or
+npm install
+# or
+yarn
+```
+
+### 2) Run the dev server
+```bash
+pnpm dev
+# or
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3) Build & start (production)
+```bash
+pnpm build && pnpm start
+# or npm run build && npm start
+# or yarn build && yarn start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4) Lint
+```bash
+pnpm lint
+# or npm run lint
+# or yarn lint
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🗂️ Project Structure (example)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> The exact layout may vary, but this is a typical structure for App Router projects and mirrors the code in this repository.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+/
+├─ public/                       # static assets
+├─ app/
+│  ├─ layout.tsx                 # root layout (fonts, providers, theme class)
+│  └─ page.tsx                   # homepage
+├─ components/
+│  ├─ theme-switcher.tsx         # shadcn Select-based theme dropdown
+│  ├─ SectionCard.tsx            # section list/details
+│  ├─ SectionHeader.tsx          # header with back/action UI
+│  └─ ui/                        # shadcn components (select, card, skeleton, ...)
+├─ providers/
+│  └─ SectionProvider.tsx        # section state (active tab/section)
+├─ data/
+│  └─ useFirestoreCollection.ts  # hook to fetch collection by section
+├─ styles/ or ./ (globals.css)   # Tailwind + CSS variables
+├─ tailwind.config.*
+├─ tsconfig.json
+└─ package.json
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT — feel free to adapt this setup for your own portfolio.
