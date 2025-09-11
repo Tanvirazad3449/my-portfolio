@@ -7,11 +7,12 @@ import {
   SelectContent,
   SelectItem,
 } from '@/components/ui/select';
-import { Moon, Sun, TreePine } from 'lucide-react';
+import { Cloud, Moon, Sun, TreePine } from 'lucide-react';
 
 const themes = [
-  { key: 'light',  component:  <span aria-hidden><Sun className="w-5 h-5"/></span>},
   { key: 'dark',   component:   <span aria-hidden><Moon className="w-5 h-5"/></span>},
+  { key: 'light',  component:  <span aria-hidden><Sun className="w-5 h-5"/></span>},
+  { key: 'sky',  component:  <span aria-hidden><Cloud className="w-5 h-5"/></span>},
     { key: 'forest',   component:   <span aria-hidden><TreePine className="w-5 h-5"/></span>},
 
 ] as const;
@@ -19,10 +20,10 @@ const themes = [
 type ThemeKey = (typeof themes)[number]['key'];
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<ThemeKey>('light');
+  const [theme, setTheme] = useState<ThemeKey>('dark');
 
   useEffect(() => {
-    const saved = (localStorage.getItem('theme') as ThemeKey) || 'light';
+    const saved = (localStorage.getItem('theme') as ThemeKey) || 'dark';
     setTheme(saved);
     applyTheme(saved);
   }, []);
@@ -46,7 +47,7 @@ export default function ThemeSwitcher() {
         className="
           w-10 h-10 p-0 
           flex items-center justify-center  shadow-none
-          appearance-none outline-0 rounded-lg cursor-pointer hover:bg-accent/30
+          appearance-none outline-0 rounded-lg cursor-pointer hover:bg-accent/10
           pr-0 [&>svg]:hidden
         "
       >
@@ -59,7 +60,7 @@ export default function ThemeSwitcher() {
           <SelectItem
             key={t.key}
             value={t.key}
-            className="flex items-center justify-center w-10 h-10 p-0 rounded-lg focus:bg-accent/30"
+            className="flex items-center justify-center w-10 h-10 p-0 rounded-lg focus:bg-accent/10"
           >
             {t.component}
             <span className="sr-only">{t.key}</span>

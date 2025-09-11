@@ -1,33 +1,39 @@
 /* 🌞 Light Theme */
 :root {
-  --color-base-bg: #FAF9EE;        /* warm paper */
+  --color-base-bg: #FFFFFF;        /* warm paper */
   --color-base-fg: #000000;        /* dark coffee text */
-  --color-base-fg-hover: #A2AF9B;  /* hover text */
-  --color-base-accent: #A2AF9B;    /* warm bronze accent */
-    --color-base-border: #e0e0e0;    /* warm bronze accent */
+  --color-base-accent: #000000;    /* warm bronze accent */
+    --color-base-border: #D2D2D2;    /* warm bronze accent */
 
+}
+
+/* 🌙 Dark Theme */
+:root.sky,
+html.sky,
+[data-theme="sky"] {
+  --color-base-bg: #ecf3fb;        /* warm paper */
+  --color-base-fg: #18406e;        /* dark coffee text */
+  --color-base-accent: #7cabe2;    /* warm bronze accent */
+    --color-base-border: #cbddf4;    /* warm bronze accent */
 }
 
 /* 🌙 Dark Theme */
 :root.dark,
 html.dark,
 [data-theme="dark"] {
-  --color-base-bg: #222831;        /* slate navy background */
-  --color-base-fg: #ffffff;        /* light gray text */
-  --color-base-fg-hover: #948979;  /* blue hover */
-  --color-base-accent: #DFD0B8;    /* bright blue accent */
-      --color-base-border: #40454d;    /* warm bronze accent */
-
+  --color-base-bg: #37353E;        /* slate navy background */
+  --color-base-fg: #dfdee3;        /* light gray text */
+  --color-base-accent: #aca9b5;    /* bright blue accent */
+  --color-base-border: #40454d;    /* warm bronze accent */
 }
 
 /* 🌲 Forest Theme */
 html.forest,
 [data-theme="forest"] {
-  --color-base-bg: #5D688A;        /* deep forest green */
-  --color-base-fg: #FFF2EF;        /* pale leaf text */
-  --color-base-fg-hover: #FFDBB6;  /* minty hover */
-  --color-base-accent: #FFDBB6;    /* vibrant green accent */
-      --color-base-border: #828dae;    /* warm bronze accent */
+  --color-base-bg: #17313E;        /* deep forest green */
+  --color-base-fg: #aed0e1;        /* pale leaf text */
+  --color-base-accent: #418bb0;    /* vibrant green accent */
+      --color-base-border: #22485b;    /* warm bronze accent */
 
 }
 
@@ -37,9 +43,6 @@ color-base-bg
 
 color-base-fg
 - all text colors
-
---color-base-fg-hover
-- hover text colors on buttons and links
 
 color-base-accent
 - border color and hover bg

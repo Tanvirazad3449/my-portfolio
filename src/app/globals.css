@@ -60,7 +60,7 @@
   --popover-foreground: var(--color-base-fg);
 
   --primary: var(--color-base-fg);
-  --primary-hover: var(--color-base-fg-hover);
+  --primary-hover: var(--color-base-fg);
   --primary-foreground: var(--color-base-bg);
 
   --secondary-foreground: var(--color-base-accent);
@@ -71,7 +71,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --text-primary-foreground: var(--color-base-fg);
   --text-hover: var(--color-base-accent);
-  --hover-color: var(--color-base-fg-hover);
+  --hover-color: var(--color-base-fg);
   --border: var(--color-base-border);
   --input: var(--color-base-accent);
 

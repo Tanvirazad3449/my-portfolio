@@ -11,7 +11,7 @@ export default function SidebarPage() {
   return (
     <SectionProvider initialSections={sections} initialActive={sections[0]}>
       <div className="h-screen bg-background p-4 md:p-6 flex flex-col">
-        <HeaderBar title="Tanvir Azad" />
+        <HeaderBar title="Tanvir Azad" subTitle="Frontend Engineer" pills={["web", "android", "ios"]}/>
         <div className="flex-1 min-h-0 flex gap-4">
           <SidebarNav />
           <main className="flex-1 min-h-0">

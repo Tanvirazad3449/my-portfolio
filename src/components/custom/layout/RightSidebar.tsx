@@ -46,7 +46,7 @@ function ContactList() {
           href={href}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="flex items-center gap-3 transition-colors"
+          className="flex items-center gap-3 transition-colors hover:text-accent"
         >
           <Icon className="w-5 h-5" />
           <span>{label}</span>

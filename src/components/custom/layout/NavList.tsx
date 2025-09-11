@@ -30,14 +30,14 @@ export default function NavList({
             {active === section && (
               <Highlight
                 layoutId="highlight"
-                className="absolute inset-0 rounded-md bg-accent"
+                className="absolute inset-0 rounded-md bg-accent/20"
               />
             )}
             <MotionButton
               // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               variant="ghost"
-              className={`w-full justify-start cursor-pointer hover:text-primary relative z-10 ${
+              className={`w-full justify-start cursor-pointer hover:bg-accent/10 hover:text-primary relative z-10 ${
                 active === section ? "font-medium" : ""
               }`}
               aria-current={active === section ? "page" : undefined}
