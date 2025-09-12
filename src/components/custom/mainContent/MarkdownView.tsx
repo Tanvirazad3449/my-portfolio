@@ -10,14 +10,13 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import { h } from "hastscript";
 import "highlight.js/styles/github.css";
-import "./dev-to-markdown.css";
-
+import "@/css/markdown.css"
 type Props = {
   content: string | undefined;
   className?: string; // e.g. "prose max-w-none"
 };
 
-export default function DevToMarkdown({
+export default function MarkdownView({
   content,
   className = "prose max-w-none",
 }: Props) {

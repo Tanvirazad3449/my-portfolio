@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/css/globals.css";
+import { SectionProvider, sections } from "@/providers/SectionProvider";
+import HeaderBar from "@/components/custom/layout/HeaderBar";
+import ContactBar from "@/components/custom/layout/ContactBar";
+import { NavBar } from "@/components/custom/layout/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +28,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="h-screen bg-background p-4 md:p-6 flex flex-col">
+
+          <SectionProvider>
+            <HeaderBar title="Tanvir Azad" subTitle="Frontend Engineer" pills={["web", "android", "ios"]} />
+            <div className="flex-1 min-h-0 flex gap-4">
+              <NavBar />
+              <main className="flex-1 min-h-0">
+
+                {children}
+              </main>
+              <ContactBar />
+
+            </div>
+          </SectionProvider>
+        </div>
       </body>
     </html>
   );

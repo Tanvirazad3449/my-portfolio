@@ -1,4 +1,4 @@
-@import "../../app/variables.css";
+@import "./variables.css";
 
 .devto-article * {
   margin-top: 0 !important;          /* physical */

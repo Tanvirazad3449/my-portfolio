@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { collection, getDocs, FirestoreError } from "firebase/firestore";
+import { collection, getDocs, FirestoreError, doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { useSections } from "@/providers/SectionProvider";
 
-export function useFirestoreCollection<T extends { id: string }>(path: string) {
+export function useFirestoreCollection<T extends { id: string }>(id?: string) {
+  const { activeSection } = useSections();
   const [data, setData] = useState<T[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<FirestoreError | null>(null);
@@ -14,15 +16,27 @@ export function useFirestoreCollection<T extends { id: string }>(path: string) {
 
     (async () => {
       try {
-        const ref = collection(db, path);
-        const snap = await getDocs(ref);
+        if (id) {
+          const ref = doc(db, activeSection.toLowerCase(), id);
+          const snap = await getDoc(ref);
+          if (!isMounted) return;
 
-        const items = snap.docs.map((doc) => ({
-          id: doc.id,
-          ...(doc.data() as Omit<T, "id">),
-        })) as T[];
+          if (snap.exists()) {
+            const item = { id: snap.id, ...(snap.data() as Omit<T, "id">) } as T;
+            setData([item]);
+          } else {
+            setData([]);
+          }
+        } else {
+          const ref = collection(db, activeSection.toLowerCase());
+          const snap = await getDocs(ref);
+          if (!isMounted) return;
 
-        if (isMounted) setData(items);
+          const items = snap.docs.map(
+            (d) => ({ id: d.id, ...(d.data() as Omit<T, "id">) } as T)
+          );
+          setData(items);
+        }
       } catch (err) {
         console.error(err);
         if (isMounted) setError(err as FirestoreError);
@@ -34,7 +48,7 @@ export function useFirestoreCollection<T extends { id: string }>(path: string) {
     return () => {
       isMounted = false;
     };
-  }, [path]);
+  }, [activeSection]);
 
   return { data, loading, error };
 }

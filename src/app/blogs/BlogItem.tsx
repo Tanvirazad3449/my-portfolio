@@ -31,10 +31,10 @@ type Props = {
   teaser?: string | undefined;
   publishedOn?: DateLike;
   className?: string;
-  locale?: string; // e.g. "en-GB"
+  locale?: string; 
 };
 
-export default function SectionCardItemMd({
+export default function BlogItem({
   title,
   teaser,
   publishedOn,
@@ -46,7 +46,6 @@ export default function SectionCardItemMd({
 
   return (
     <div className={`w-full flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4 shadow-none ${className}`}>
-      {/* Left: title + teaser */}
       <div className="flex-1 min-w-0">
         <p className="break-words">{title}</p>
         <p className="text-sm max-w-full md:max-w-[66%] break-words text-primary/60">
@@ -54,7 +53,6 @@ export default function SectionCardItemMd({
         </p>
       </div>
 
-      {/* Right: date */}
       <div className="shrink-0 md:ml-auto text-left md:text-right">
         <p className="text-sm whitespace-nowrap text-primary/60">
           Published on{" "}

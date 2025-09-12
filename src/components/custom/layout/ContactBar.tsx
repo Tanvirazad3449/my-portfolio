@@ -80,7 +80,7 @@ export function ContactSidebar() {
   );
 }
 
-export default function RightSidebar() {
+export default function ContactBar() {
 
   return (
     <div className="hidden md:flex p-6 rounded-2xl border flex-col gap-6 sticky top-6">
