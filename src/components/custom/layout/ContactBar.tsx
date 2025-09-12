@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Mail, Linkedin, Github, Rss, Facebook, Instagram, Menu, Link } from "lucide-react";
 
-const contacts = [
+export const contacts = [
   {
     href: "mailto:tanvirazadwork@gmail.com",
     label: "tanvirazadwork@gmail.com",
@@ -46,7 +46,7 @@ function ContactList() {
           href={href}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="flex items-center gap-3 transition-colors hover:text-accent"
+          className="flex items-center gap-3 transition-colors hover:text-primary/60"
         >
           <Icon className="w-5 h-5" />
           <span>{label}</span>

@@ -63,17 +63,18 @@
   --primary-hover: var(--color-base-fg);
   --primary-foreground: var(--color-base-bg);
 
-  --secondary-foreground: var(--color-base-accent);
+  --secondary-foreground: var(--color-base-border);
 
-  --accent: var(--color-base-accent);
-  --accent-foreground: var(--color-base-accent);
+  --accent: var(--color-base-border);
+  
+  --accent-foreground: var(--color-base-border);
 
   --destructive: oklch(0.577 0.245 27.325);
   --text-primary-foreground: var(--color-base-fg);
-  --text-hover: var(--color-base-accent);
+  --text-hover: var(--color-base-border);
   --hover-color: var(--color-base-fg);
   --border: var(--color-base-border);
-  --input: var(--color-base-accent);
+  --input: var(--color-base-border);
 
   --chart-1: var(--color-chart-1);
   --chart-2: var(--color-chart-2);
@@ -83,10 +84,10 @@
 
   --sidebar: var(--color-base-bg);
   --sidebar-foreground: var(--color-base-fg);
-  --sidebar-primary: var(--color-base-accent);
+  --sidebar-primary: var(--color-base-border);
   --sidebar-primary-foreground: var(--color-base-bg);
-  --sidebar-accent-foreground: var(--color-base-accent);
-  --sidebar-border: var(--color-base-accent);
+  --sidebar-accent-foreground: var(--color-base-border);
+  --sidebar-border: var(--color-base-border);
 }
 
 

@@ -13,7 +13,7 @@ import "highlight.js/styles/github.css";
 import "@/css/markdown.css"
 type Props = {
   content: string | undefined;
-  className?: string; // e.g. "prose max-w-none"
+  className?: string; 
 };
 
 export default function MarkdownView({
@@ -45,8 +45,7 @@ export default function MarkdownView({
             <a {...props} target="_blank" rel="noopener noreferrer" />
           ),
           img: (props) => <img {...props} loading="lazy" decoding="async" />,
-          code: ({ className, children, ...props }) => {
-            // wrap both inline and block code to avoid horizontal overflow
+          code: ({ node, className, children, ...props }) => {
             
             return (
               <code

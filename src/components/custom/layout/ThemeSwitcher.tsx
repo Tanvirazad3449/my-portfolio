@@ -47,7 +47,7 @@ export default function ThemeSwitcher() {
         className="
           w-10 h-10 p-0 
           flex items-center justify-center  shadow-none
-          appearance-none outline-0 rounded-lg cursor-pointer hover:bg-accent/10
+          appearance-none outline-0 rounded-lg cursor-pointer hover:bg-border
           pr-0 [&>svg]:hidden
         "
       >
@@ -60,7 +60,7 @@ export default function ThemeSwitcher() {
           <SelectItem
             key={t.key}
             value={t.key}
-            className="flex items-center justify-center w-10 h-10 p-0 rounded-lg focus:bg-accent/10"
+            className="flex items-center justify-center w-10 h-10 p-0 rounded-lg focus:bg-border text-primary focus:text-primary"
           >
             {t.component}
             <span className="sr-only">{t.key}</span>

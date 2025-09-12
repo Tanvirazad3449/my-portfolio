@@ -1,9 +1,8 @@
 /* 🌞 Light Theme */
 :root {
-  --color-base-bg: #FFFFFF;        /* warm paper */
-  --color-base-fg: #000000;        /* dark coffee text */
-  --color-base-accent: #000000;    /* warm bronze accent */
-    --color-base-border: #D2D2D2;    /* warm bronze accent */
+  --color-base-bg: #ffffff;
+  --color-base-fg: #292929;
+  --color-base-border: #f0f0f0;
 
 }
 
@@ -11,29 +10,26 @@
 :root.sky,
 html.sky,
 [data-theme="sky"] {
-  --color-base-bg: #ecf3fb;        /* warm paper */
-  --color-base-fg: #18406e;        /* dark coffee text */
-  --color-base-accent: #7cabe2;    /* warm bronze accent */
-    --color-base-border: #cbddf4;    /* warm bronze accent */
+  --color-base-bg: #ecf3fb;
+  --color-base-fg: #18406e;
+  --color-base-border: #dce9f7;
 }
 
 /* 🌙 Dark Theme */
 :root.dark,
 html.dark,
 [data-theme="dark"] {
-  --color-base-bg: #37353E;        /* slate navy background */
-  --color-base-fg: #dfdee3;        /* light gray text */
-  --color-base-accent: #aca9b5;    /* bright blue accent */
-  --color-base-border: #40454d;    /* warm bronze accent */
+  --color-base-bg: #37353E;
+  --color-base-fg: #d5d3da;
+  --color-base-border: #403e49;
 }
 
 /* 🌲 Forest Theme */
 html.forest,
 [data-theme="forest"] {
-  --color-base-bg: #17313E;        /* deep forest green */
-  --color-base-fg: #aed0e1;        /* pale leaf text */
-  --color-base-accent: #418bb0;    /* vibrant green accent */
-      --color-base-border: #22485b;    /* warm bronze accent */
+  --color-base-bg: #17313E;
+  --color-base-fg: #aed0e1;
+  --color-base-border: #22485b;
 
 }
 
@@ -44,7 +40,5 @@ color-base-bg
 color-base-fg
 - all text colors
 
-color-base-accent
-- border color and hover bg
 
 */

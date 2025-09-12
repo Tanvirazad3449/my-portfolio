@@ -48,14 +48,14 @@ function MainContentContainer({ children, loading = false, error }: Props) {
         </AnimatePresence>
 
         <Card
-          className={`h-full rounded-2xl border overflow-hidden flex flex-col shadow-none transition-opacity 
+          className={`h-full p-0 pt-4 m-0 gap-y-0 rounded-2xl border overflow-hidden flex flex-col shadow-none transition-opacity 
             ${loading ? "opacity-80 pointer-events-none" : "opacity-100"}
             `}
         >
           {(error && error.message) ?
             <>
-              <CardHeader className="flex flex-row justify-between">
-                <CardTitle className={`text-2xl font-bold text-red-500`}>Error</CardTitle>
+              <CardHeader className="flex flex-row justify-between pb-4">
+                <CardTitle className={`text-2xl font-bold`}>Error</CardTitle>
               </CardHeader>
 
               <CardContent className="grow overflow-auto">
@@ -64,15 +64,18 @@ function MainContentContainer({ children, loading = false, error }: Props) {
             </>
             :
             <>
-              <CardHeader className="flex flex-row justify-between">
+              <CardHeader className="flex flex-row justify-between pb-4">
                 <MainContentHeader />
+                <div className="h-4 bg-gradient-to-b from-background to-transparent absolute w-[calc(100%-theme(spacing.12))] top-13"/>
               </CardHeader>
 
-              <CardContent className="grow overflow-auto">
+              <CardContent className="grow overflow-auto pt-2">
                 {children}
               </CardContent>
             </>
           }
+                          <div className="h-4 bg-gradient-to-b from-transparent to-background absolute w-[calc(100%-theme(spacing.4))] bottom-px rounded-b-2xl rounded-br-none"/>
+
         </Card>
       </motion.div>
     </AnimatePresence>

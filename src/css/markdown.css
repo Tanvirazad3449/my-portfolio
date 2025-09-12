@@ -8,10 +8,23 @@
 .devto-article {
   --dev-text: var(--color-base-fg);         /* gray-900 */
   --dev-muted: var(--color-base-muted);        /* gray-600 */
-  --dev-border: var(--color-base-accent);       /* gray-200 */
+  --dev-border: var(--color-base-border);       /* gray-200 */
   color: var(--dev-text);
   line-height: 1.7;
 }
+
+.devto-article :not(pre) > code {
+  display: inline;              /* ensure inline flow */
+  white-space: normal;          /* allow normal wrapping */
+  overflow-wrap: anywhere;      /* wrap long tokens */
+  word-break: break-word;
+  font-weight: bold;
+  padding: .15rem .35rem;
+  border-radius: .375rem;
+  background: var(--dev-bg, transparent);
+  font-size: .95em;
+}
+
 
 .devto-article h1, .devto-article h2, .devto-article h3,
 .devto-article h4, .devto-article h5, .devto-article h6 {
@@ -72,7 +85,7 @@
 /* Code blocks */
 .devto-pre {
   color: var(--color-base-fg);
-  border: 1px solid var(--color-base-accent);
+  border: 1px solid var(--dev-border);
   padding: 1rem;
   background-color: #FFFFFF;
   border-radius: .75rem;
@@ -132,7 +145,8 @@
   word-break: break-word;
   overflow-wrap: anywhere;
   background-color: #FFFFFF;
-
+display: block;
+  white-space: inherit !important;
 }
 
 /* Inline code: tight and wrapping */

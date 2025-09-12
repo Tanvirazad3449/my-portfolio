@@ -1,12 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { sections, useSections } from "@/providers/SectionProvider";
 import { usePathname, useRouter } from "next/navigation";
 
+type MainContentHeaderButtonTypes = {
+  label: string;
+  onClick: () => void;
+  leftIconComponent?: ReactNode;
+  rightIconComponent?: ReactNode;
+}
+export function MainContentHeaderButton({ label, onClick, leftIconComponent, rightIconComponent }: MainContentHeaderButtonTypes) {
+  return (
+    <Button
+      variant="default"
+      size="sm"
+      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-4 -ml-3 shadow-none hover:bg-transparent font-light hover:text-primary text-primary/80`}
+      aria-label={label}
+      onClick={onClick}
+    >
+      {leftIconComponent}
+      {label}
+      {rightIconComponent}
+    </Button>
+  )
+}
 export default function MainContentHeader() {
   const pathname = usePathname();
   const router = useRouter()
@@ -14,30 +35,17 @@ export default function MainContentHeader() {
   const nextSection = getNextSection(sections, activeSection)
   const showBackButton = pathname.replace(/^\/+/, "").split("/")[1]?.length > 0
   return showBackButton ? (
-    <Button
-      variant="ghost"
-      size="default"
-      className={`cursor-pointer hover:text-primary hover:bg-accent/10`}
-      aria-label={`Back to ${activeSection}`}
-      onClick={()=>router.push(`/${activeSection.toLowerCase()}`)}
-    >
-      <ArrowLeft size={24} className="mr-2" />
-      Back to {activeSection}
-    </Button>
+    <MainContentHeaderButton
+      label={`Back to ${activeSection}`}
+      leftIconComponent={<ArrowLeft size={24} />}
+      onClick={() => router.push(`/${activeSection.toLowerCase()}`)} />
   ) : (
-    <div className="flex flex-row justify-between w-full">
-
-      <CardTitle className={`text-2xl font-bold`}>{activeSection}</CardTitle>
-      <Button
-        variant="ghost"
-        size="default"
-        className={`cursor-pointer hover:text-primary/60 text-primary/60 hover:bg-accent/10`}
-        aria-label={`To ${nextSection}`}
-        onClick={() => handleActiveSection(nextSection)}
-      >
-        To {nextSection}
-        <ArrowRight size={24} />
-      </Button>
+    <div className="flex flex-row justify-between items-center w-full">
+      <CardTitle className={`font-bold`}>{activeSection}</CardTitle>
+      <MainContentHeaderButton
+        label={`To ${nextSection}`}
+        rightIconComponent={<ArrowRight size={24} />}
+        onClick={() => handleActiveSection(nextSection)} />
     </div>
   );
 }

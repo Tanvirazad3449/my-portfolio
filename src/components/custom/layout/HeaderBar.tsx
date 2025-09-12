@@ -12,7 +12,7 @@ pills: string[];
 };
 function Pill({ text }: { text: string }) {
   return (
-    <span className="hidden md:flex px-2 py-1 bg-primary/10 rounded-sm mr-1">
+    <span className="hidden md:flex px-2 py-1 bg-primary/5 rounded-sm mr-1">
       <p className="text-xs text-primary/60">{text}</p>
     </span>
   )
@@ -31,7 +31,7 @@ export default function HeaderBar({ title, subTitle, pills }: Props) {
           }
         </div>
 
-        <p className="text-sm text-primary/60">{subTitle}</p>
+        <p className="text-sm text-primary/80">{subTitle}</p>
       </div>
 
       <div className="flex flex-row">

@@ -39,14 +39,14 @@ function NavList({
             {activeSection === section && (
               <Highlight
                 layoutId="highlight"
-                className="absolute inset-0 rounded-md bg-accent/20"
+                className="absolute inset-0 rounded-md bg-border"
               />
             )}
             <MotionButton
               // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               variant="ghost"
-              className={`w-full justify-start cursor-pointer hover:bg-accent/10 hover:text-primary relative z-10 ${
+              className={`w-full justify-start cursor-pointer hover:bg-border hover:text-primary relative z-10 ${
                 activeSection === section ? "font-medium" : ""
               }`}
               aria-current={activeSection === section ? "page" : undefined}
