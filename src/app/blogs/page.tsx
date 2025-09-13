@@ -26,7 +26,7 @@ export default function Blogs() {
                         }
                     >
                         <BlogItem
-                            title={item.title}
+                            title={item.title || ""}
                             teaser={item.teaser}
                             publishedOn={item.publishedOn}
                         />

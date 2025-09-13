@@ -13,7 +13,7 @@ export default function About() {
             <div className="prose max-w-none gap-9">
                 <div className="mt-1 md:float-left sm:flex sm:flex-col mr-6 mb-4">
                     <Image
-                        src="/tanvir.webp"
+                        src={data[0]?.logo || "/null.webp"}
                         alt="Tanvir Azad"
                         priority={true}
                         width={200}

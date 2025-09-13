@@ -19,10 +19,10 @@
   overflow-wrap: anywhere;      /* wrap long tokens */
   word-break: break-word;
   font-weight: bold;
-  padding: .15rem .35rem;
+  /* padding: .15rem .35rem;
   border-radius: .375rem;
   background: var(--dev-bg, transparent);
-  font-size: .95em;
+  font-size: .95em; */
 }
 
 
@@ -86,12 +86,11 @@
 .devto-pre {
   color: var(--color-base-fg);
   border: 1px solid var(--dev-border);
-  padding: 1rem;
-  background-color: #FFFFFF;
+  /* padding: 1rem; */
   border-radius: .75rem;
   overflow: auto;
   line-height: 1.55;
-  font-size: .95rem;
+  font-size: .8rem;
   margin: 1rem 0;
 }
 

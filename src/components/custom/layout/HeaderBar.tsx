@@ -4,6 +4,7 @@ import { useSections } from "@/providers/SectionProvider";
 import { ContactSidebar } from "./ContactBar";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { MobileNavBar } from "./NavBar";
+import { useRouter } from "next/navigation";
 
 type Props = {
   title: string;
@@ -20,10 +21,10 @@ function Pill({ text }: { text: string }) {
 export default function HeaderBar({ title, subTitle, pills }: Props) {
   const { activeSection, handleActiveSection } = useSections();
 
-
+const router = useRouter()
   return (
     <header className="md:rounded-2xl sticky top-0 bg-background backdrop-blur border-b-2 md:border px-2 z-50 mx-0 md:px-4 py-3 mb-4 flex items-center justify-between shrink-0">
-      <div className="flex flex-col ml-2">
+      <div className="flex flex-col ml-2 cursor-pointer" onClick={()=>router.push('/')}>
         <div className="flex flex-row items-center">
           <p className="text-sm md:text-lg font-semibold tracking-tight mr-2">{title}</p>
           {

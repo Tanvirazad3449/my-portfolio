@@ -12,13 +12,14 @@ type MainContentHeaderButtonTypes = {
   onClick: () => void;
   leftIconComponent?: ReactNode;
   rightIconComponent?: ReactNode;
+  className?: string;
 }
-export function MainContentHeaderButton({ label, onClick, leftIconComponent, rightIconComponent }: MainContentHeaderButtonTypes) {
+export function MainContentHeaderButton({ label, onClick, leftIconComponent, rightIconComponent, className }: MainContentHeaderButtonTypes) {
   return (
     <Button
       variant="default"
       size="sm"
-      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-2 md:-mr-4 -ml-3 shadow-none hover:bg-transparent font-light hover:text-primary text-primary/80`}
+      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-2 md:-mr-4 -ml-3 shadow-none hover:bg-transparent font-light hover:text-primary text-primary/80 ${className}`}
       aria-label={label}
       onClick={onClick}
     >
@@ -43,6 +44,7 @@ export default function MainContentHeader() {
     <div className="flex flex-row justify-between items-center w-full">
       <CardTitle className={`font-bold`}>{activeSection}</CardTitle>
       <MainContentHeaderButton
+        className="md:hidden"
         label={`To ${nextSection}`}
         rightIconComponent={<ArrowRight size={24} />}
         onClick={() => handleActiveSection(nextSection)} />

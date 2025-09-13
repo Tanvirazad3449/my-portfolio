@@ -19,7 +19,7 @@ html.sky,
 :root.dark,
 html.dark,
 [data-theme="dark"] {
-  --color-base-bg: #37353E;
+  --color-base-bg: #242329;
   --color-base-fg: #d5d3da;
   --color-base-border: #403e49;
 }
