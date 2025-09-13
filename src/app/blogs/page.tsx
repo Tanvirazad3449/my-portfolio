@@ -20,7 +20,7 @@ export default function Blogs() {
                 {data.map((item) => (
                     <Card
                         key={item.id}
-                        className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium hover:bg-border"
+                        className="h-full rounded-2xl p-4 shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium hover:bg-border"
                         onClick={() =>
                             router.push(`blogs/${item.id}`)
                         }
@@ -34,7 +34,7 @@ export default function Blogs() {
                     </Card>
                 ))}
                 <Card
-                    className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium hover:bg-border/50 bg-border"
+                    className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium border hover:bg-border/50 bg-border"
                     onClick={() => {
                         window.open(contacts[3].href, "_blank", "noopener,noreferrer")
                     }}

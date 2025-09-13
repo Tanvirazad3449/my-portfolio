@@ -11,7 +11,7 @@ export default function About() {
     return (
         <MainContentContainer loading={loading} error={error}>
             <div className="prose max-w-none gap-9">
-                <div className="md:float-left sm:flex sm:flex-col mr-6 mb-4">
+                <div className="mt-1 md:float-left sm:flex sm:flex-col mr-6 mb-4">
                     <Image
                         src="/tanvir.webp"
                         alt="Tanvir Azad"

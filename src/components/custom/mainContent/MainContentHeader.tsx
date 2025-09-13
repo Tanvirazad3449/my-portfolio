@@ -18,7 +18,7 @@ export function MainContentHeaderButton({ label, onClick, leftIconComponent, rig
     <Button
       variant="default"
       size="sm"
-      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-4 -ml-3 shadow-none hover:bg-transparent font-light hover:text-primary text-primary/80`}
+      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-2 md:-mr-4 -ml-3 shadow-none hover:bg-transparent font-light hover:text-primary text-primary/80`}
       aria-label={label}
       onClick={onClick}
     >
