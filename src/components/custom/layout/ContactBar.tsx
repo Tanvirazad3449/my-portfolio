@@ -83,7 +83,7 @@ export function ContactSidebar() {
 export default function ContactBar() {
 
   return (
-    <div className="hidden md:flex p-6 rounded-2xl border flex-col gap-6 sticky top-6">
+    <div className="hidden md:flex p-6 rounded-2xl border flex-col gap-6 sticky top-6 w-56">
 
       <ContactList />
     </div>
