@@ -29,7 +29,7 @@ export function ExperienceAccordion({
               priority={true}
               width={45}
               height={45}
-              className="rounded-full bg-border border"
+              className="rounded-full bg-border border border-primary/10"
             />
             <div className="ml-4 text-left">
               <p className="font-semibold">

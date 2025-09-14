@@ -16,11 +16,10 @@ export default function Blogs() {
     return (
         <MainContentContainer loading={loading} error={error}>
             <div className="flex flex-col gap-4 mt-2 pb-6">
-
                 {data.map((item) => (
-                    <Card
+                    <div
                         key={item.id}
-                        className="h-full rounded-2xl p-4 shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium hover:bg-border"
+                        className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium border-primary/10 p-4 rounded-lg hover:bg-primary/5"
                         onClick={() =>
                             router.push(`blogs/${item.id}`)
                         }
@@ -31,10 +30,10 @@ export default function Blogs() {
                             publishedOn={item.publishedOn}
                         />
 
-                    </Card>
+                    </div>
                 ))}
-                {data?.length > 0 && <Card
-                    className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium border hover:bg-border/50 bg-border"
+                {data?.length > 0 && <div
+                        className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium border-primary/10 p-4 rounded-lg hover:bg-primary/5"
                     onClick={() => {
                         window.open(contacts[3].href, "_blank", "noopener,noreferrer")
                     }}
@@ -52,7 +51,7 @@ export default function Blogs() {
                         </div>
                     </div>
 
-                </Card>
+                </div>
 }
             </div>
         </MainContentContainer>

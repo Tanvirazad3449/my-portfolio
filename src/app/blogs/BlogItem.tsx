@@ -54,7 +54,7 @@ export default function BlogItem({
       </div>
 
       <div className="shrink-0 md:ml-auto text-left md:text-right">
-        <p className="text-sm whitespace-nowrap text-primary/60">
+        <p className="text-xs whitespace-nowrap text-primary/60">
           Published on{" "}
           <time dateTime={d ? d.toISOString() : ""}>{formatted || "—"}</time>
         </p>

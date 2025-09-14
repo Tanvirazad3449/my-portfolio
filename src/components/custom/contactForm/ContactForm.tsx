@@ -75,7 +75,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Your name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Ada Lovelace" {...field} />
+                  <Input placeholder="Ada Lovelace" {...field} className="border-primary/20 placeholder:text-primary/40"/>
                 </FormControl>
                 <FormMessage/>
               </FormItem>
@@ -88,7 +88,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="you@example.com" {...field} />
+                  <Input type="email" placeholder="you@example.com" {...field} className="border-primary/20 placeholder:text-primary/40"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,7 +103,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
-                <Input placeholder="How can I help?" {...field} />
+                <Input placeholder="How can I help?" {...field}  className="border-primary/20 placeholder:text-primary/40"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -119,7 +119,7 @@ export default function ContactForm() {
               <FormControl>
                 <Textarea
                   placeholder="Tell me a bit about your project or question…"
-                  className="min-h-[140px] resize-y"
+                  className="min-h-[140px] resize-y border-primary/20 placeholder:text-primary/40"
                   {...field}
                 />
               </FormControl>
@@ -140,7 +140,7 @@ export default function ContactForm() {
         />
 
         <div className="flex items-center flex-col gap-3">
-          <Button type="submit" className="bg-border/60 hover:bg-border/80 cursor-pointer border w-full" disabled={status === "sending"}>
+          <Button type="submit" className="bg-primary/10 hover:bg-primary/20 cursor-pointer border w-full" disabled={status === "sending"}>
             {status === "sending" ? "Sending…" : "Send message"}
           </Button>
           {status === "sent" && <p className="text-sm text-green-600">Thanks! I’ll get back to you soon.</p>}

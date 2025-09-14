@@ -48,7 +48,7 @@ function MainContentContainer({ children, loading = false, error }: Props) {
         </AnimatePresence>
 
         <Card
-          className={`h-full p-0 pt-0 pb-0 md:pt-4 m-0 gap-y-0 md:pb-0 rounded-none md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity
+          className={`h-full p-0 pt-0 pb-0 md:pt-4 m-0 gap-y-0 md:pb-0 rounded-none border-none md:bg-border md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity
             ${loading ? "opacity-80 pointer-events-none" : "opacity-100"}
             `}
         >
@@ -66,7 +66,6 @@ function MainContentContainer({ children, loading = false, error }: Props) {
             <>
               <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">
                 <MainContentHeader />
-                <div className="h-4 bg-gradient-to-b from-background to-transparent absolute hidden md:block md:w-[calc(100%-theme(spacing.12))] top-8 md:top-12" />
               </CardHeader>
 
               <CardContent className="grow overflow-auto md:pt-2">
@@ -74,7 +73,6 @@ function MainContentContainer({ children, loading = false, error }: Props) {
               </CardContent>
             </>
           }
-          <div className="h-4 bg-gradient-to-b hidden md:block from-transparent to-background absolute w-full md:w-[calc(100%-theme(spacing.4))] bottom-px md:rounded-b-2xl md:rounded-br-none" />
 
         </Card>
       </motion.div>

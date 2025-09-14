@@ -1,18 +1,9 @@
 /* 🌞 Light Theme */
 :root {
-  --color-base-bg: #ffffff;
-  --color-base-fg: #292929;
-  --color-base-border: #f0f0f0;
+  --color-base-bg: #F0F0F0;
+  --color-base-fg: #000000;
+  --color-base-border: #FFFFFF;
 
-}
-
-/* 🌙 Dark Theme */
-:root.sky,
-html.sky,
-[data-theme="sky"] {
-  --color-base-bg: #ecf3fb;
-  --color-base-fg: #18406e;
-  --color-base-border: #dce9f7;
 }
 
 /* 🌙 Dark Theme */
@@ -20,16 +11,16 @@ html.sky,
 html.dark,
 [data-theme="dark"] {
   --color-base-bg: #242329;
-  --color-base-fg: #d5d3da;
-  --color-base-border: #403e49;
+  --color-base-fg: #FFFFFF;
+  --color-base-border: #2d2c34;
 }
 
 /* 🌲 Forest Theme */
 html.forest,
 [data-theme="forest"] {
-  --color-base-bg: #17313E;
-  --color-base-fg: #aed0e1;
-  --color-base-border: #22485b;
+  --color-base-bg: #bec7bd;
+  --color-base-fg: #222822;
+  --color-base-border: #dde2dd;
 
 }
 

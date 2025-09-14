@@ -39,16 +39,14 @@ function NavList({
             {activeSection === section && (
               <Highlight
                 layoutId="highlight"
-                className="absolute inset-0 rounded-md bg-border"
+                className="absolute inset-0 rounded-md text-primary bg-primary/10  cursor-pointer"
               />
             )}
             <MotionButton
               // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               variant="ghost"
-              className={`w-full justify-start cursor-pointer hover:bg-border hover:text-primary relative z-10 ${
-                activeSection === section ? "font-medium" : ""
-              }`}
+              className="text-primary hover:text-primary/60 cursor-pointer"
               aria-current={activeSection === section ? "page" : undefined}
               onClick={() => onSelect(section)}
             >
@@ -105,7 +103,7 @@ export function NavBar() {
   const { activeSection, handleActiveSection } = useSections();
 
   return (
-    <aside className="hidden md:flex flex-col w-56 rounded-2xl bg-background backdrop-blur border p-4 h-full">
+    <aside className="hidden md:flex flex-col w-56 rounded-2xl backdrop-blur bg-border p-4 h-full">
       <NavList activeSection={activeSection} onSelect={handleActiveSection} />
     </aside>
   );

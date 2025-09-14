@@ -12,7 +12,6 @@ import { Cloud, Moon, Sun, TreePine } from 'lucide-react';
 const themes = [
   { key: 'dark',   component:   <span aria-hidden><Moon className="w-5 h-5"/></span>},
   { key: 'light',  component:  <span aria-hidden><Sun className="w-5 h-5"/></span>},
-  { key: 'sky',  component:  <span aria-hidden><Cloud className="w-5 h-5"/></span>},
     { key: 'forest',   component:   <span aria-hidden><TreePine className="w-5 h-5"/></span>},
 
 ] as const;
@@ -51,7 +50,7 @@ export default function ThemeSwitcher() {
           pr-0 [&>svg]:hidden
         "
       >
-        {current.component}
+        {current?.component}
         <span className="sr-only">Theme: {theme}</span>
       </SelectTrigger>
 

@@ -19,7 +19,7 @@ export default function About() {
                             priority={true}
                             width={200}
                             height={200}
-                            className="rounded-lg bg-border"
+                            className="rounded-lg bg-border border-primary/10"
                         />
                     </div>
                     <p className="mb-4">{data[0]?.subtext}</p>
