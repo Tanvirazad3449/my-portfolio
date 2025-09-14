@@ -8,7 +8,7 @@
 .devto-article {
   --dev-text: var(--color-base-fg);         /* gray-900 */
   --dev-muted: var(--color-base-muted);        /* gray-600 */
-  --dev-border: var(--color-base-border);       /* gray-200 */
+  --dev-border: var(--color-base-bg);       /* gray-200 */
   color: var(--dev-text);
   line-height: 1.7;
 }
