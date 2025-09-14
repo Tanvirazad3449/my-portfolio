@@ -10,7 +10,7 @@ type SectionContextValue = {
 
 const SectionContext = createContext<SectionContextValue | null>(null);
 
-export const sections: string[] = ["About", "Experience", "Education", "Blogs"];
+export const sections: string[] = ["About", "Experience", "Education", "Blogs", "Contact"];
 
 export function SectionProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();

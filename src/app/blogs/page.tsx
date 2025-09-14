@@ -33,7 +33,7 @@ export default function Blogs() {
 
                     </Card>
                 ))}
-                <Card
+                {data?.length > 0 && <Card
                     className="h-full rounded-2xl p-4 shadow-none overflow-hidden flex flex-col cursor-pointer font-medium border hover:bg-border/50 bg-border"
                     onClick={() => {
                         window.open(contacts[3].href, "_blank", "noopener,noreferrer")
@@ -53,6 +53,7 @@ export default function Blogs() {
                     </div>
 
                 </Card>
+}
             </div>
         </MainContentContainer>
     );

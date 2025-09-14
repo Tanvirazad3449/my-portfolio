@@ -22,7 +22,7 @@ export function ExperienceAccordion({
     <Accordion type="single" collapsible>
       <AccordionItem value={company || ""}>
         <AccordionTrigger>
-          <div className="w-full flex flex-row items-center">
+          <div className="w-full flex flex-row items-center cursor-pointer">
             <Image
               src={logo || "./null.webp"}
               alt={company || ""}

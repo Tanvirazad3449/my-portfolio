@@ -5,11 +5,11 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { Mail, Linkedin, Github, Rss, Facebook, Instagram, Menu, Link } from "lucide-react";
 
 export const contacts = [
-  {
-    href: "mailto:tanvirazadwork@gmail.com",
-    label: "tanvirazadwork@gmail.com",
-    icon: Mail,
-  },
+  // {
+  //   href: "mailto:tanvirazadwork@gmail.com",
+  //   label: "tanvirazadwork@gmail.com",
+  //   icon: Mail,
+  // },
   {
     href: "https://linkedin.com/in/tanvirazadwork",
     label: "tanvirazadwork",
