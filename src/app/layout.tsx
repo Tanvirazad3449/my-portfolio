@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/css/globals.css";
-import { SectionProvider, sections } from "@/providers/SectionProvider";
+import { SectionProvider } from "@/providers/SectionProvider";
 import HeaderBar from "@/components/custom/layout/HeaderBar";
-import ContactBar from "@/components/custom/layout/ContactBar";
+import UrlBar from "@/components/custom/layout/UrlBar";
 import { NavBar } from "@/components/custom/layout/NavBar";
 
 const geistSans = Geist({
@@ -42,7 +42,7 @@ export default function RootLayout({
 
                 {children}
               </main>
-              <ContactBar />
+              <UrlBar />
 
             </div>
           </SectionProvider>

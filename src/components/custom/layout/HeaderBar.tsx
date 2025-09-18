@@ -1,7 +1,7 @@
 "use client";
 
 import { useSections } from "@/providers/SectionProvider";
-import { ContactSidebar } from "./ContactBar";
+import { UrlSidebar } from "./UrlBar";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { MobileNavBar } from "./NavBar";
 import { useRouter } from "next/navigation";
@@ -37,7 +37,7 @@ const router = useRouter()
 
       <div className="flex flex-row">
         <ThemeSwitcher />
-        <ContactSidebar />
+        <UrlSidebar />
         <MobileNavBar activeSection={activeSection} onSelect={handleActiveSection} />
       </div>
     </header>

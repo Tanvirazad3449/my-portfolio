@@ -2,14 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Mail, Linkedin, Github, Rss, Facebook, Instagram, Menu, Link } from "lucide-react";
+import { Linkedin, Github, Rss, Facebook, Instagram, Link } from "lucide-react";
 
 export const contacts = [
-  // {
-  //   href: "mailto:tanvirazadwork@gmail.com",
-  //   label: "tanvirazadwork@gmail.com",
-  //   icon: Mail,
-  // },
   {
     href: "https://linkedin.com/in/tanvirazadwork",
     label: "tanvirazadwork",
@@ -37,7 +32,7 @@ export const contacts = [
   },
 ];
 
-function ContactList() {
+function UrlList() {
   return (
     <div className="flex flex-col gap-4 text-sm">
       {contacts.map(({ href, label, icon: Icon }) => (
@@ -55,7 +50,7 @@ function ContactList() {
     </div>
   )
 }
-export function ContactSidebar() {
+export function UrlSidebar() {
   return (
     
       <div className="md:hidden">
@@ -72,7 +67,7 @@ export function ContactSidebar() {
           </SheetTrigger>
 
           <SheetContent side="right" className="w-64 p-4 pt-14">
-            <ContactList />
+            <UrlList />
           </SheetContent>
         </Sheet>
       </div>
@@ -80,12 +75,11 @@ export function ContactSidebar() {
   );
 }
 
-export default function ContactBar() {
+export default function UrlBar() {
 
   return (
     <div className="hidden md:flex p-6 rounded-2xl border-none bg-border flex-col gap-6 sticky top-6 w-56">
-
-      <ContactList />
+      <UrlList />
     </div>
   );
 }

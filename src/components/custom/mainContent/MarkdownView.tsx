@@ -44,7 +44,7 @@ export default function MarkdownView({
           a: (props) => (
             <a {...props} target="_blank" rel="noopener noreferrer" />
           ),
-          img: (props) => <img {...props} loading="lazy" decoding="async" />,
+          // img: (props) => <img {...props} loading="lazy" decoding="async" />,
           code: ({ node, className, children, ...props }) => {
             
             return (

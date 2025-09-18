@@ -2,16 +2,15 @@
 
 import { useFirestoreCollection } from "@/data/useFirestoreCollection";
 import MainContentContainer from "@/components/custom/mainContent/MainContentContainer";
-import { Card } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
 import BlogItem from "./BlogItem";
 import { MainContentHeaderButton } from "@/components/custom/mainContent/MainContentHeader";
 import { ArrowRight } from "lucide-react";
-import { contacts } from "@/components/custom/layout/ContactBar";
+import { contacts } from "@/components/custom/layout/UrlBar";
 
 export default function Blogs() {
     const router = useRouter()
-    const { data, loading, error } = useFirestoreCollection<FirestoreDocType>();
+    const { data, loading, error } = useFirestoreCollection();
 
     return (
         <MainContentContainer loading={loading} error={error}>

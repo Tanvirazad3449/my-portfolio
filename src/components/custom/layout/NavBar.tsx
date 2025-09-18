@@ -10,7 +10,6 @@ import {
   SheetHeader,
   SheetTitle,
   SheetDescription,
-  SheetFooter,
   SheetClose,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -45,8 +44,8 @@ function NavList({
             <MotionButton
               // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              variant="ghost"
-              className="text-primary hover:text-primary/60 cursor-pointer"
+              // variant="ghost"
+              className="text-primary hover:text-primary/60 bg-transparent cursor-pointer hover:bg-transparent w-full shadow-none justify-start"
               aria-current={activeSection === section ? "page" : undefined}
               onClick={() => onSelect(section)}
             >

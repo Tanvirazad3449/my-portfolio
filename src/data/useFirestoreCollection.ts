@@ -5,9 +5,9 @@ import { collection, getDocs, FirestoreError, doc, getDoc } from "firebase/fires
 import { db } from "@/lib/firebase";
 import { useSections } from "@/providers/SectionProvider";
 
-export function useFirestoreCollection<T extends { id: string }>(id?: string) {
+export function useFirestoreCollection(id?: string) {
   const { activeSection } = useSections();
-  const [data, setData] = useState<T[]>([]);
+  const [data, setData] = useState<FirestoreDocType[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<FirestoreError | null>(null);
 
@@ -22,7 +22,7 @@ export function useFirestoreCollection<T extends { id: string }>(id?: string) {
           if (!isMounted) return;
 
           if (snap.exists()) {
-            const item = { id: snap.id, ...(snap.data() as Omit<T, "id">) } as T;
+            const item = { id: snap.id, ...(snap.data() as Omit<FirestoreDocType, "id">) };
             setData([item]);
           } else {
             setData([]);
@@ -33,9 +33,18 @@ export function useFirestoreCollection<T extends { id: string }>(id?: string) {
           if (!isMounted) return;
 
           const items = snap.docs.map(
-            (d) => ({ id: d.id, ...(d.data() as Omit<T, "id">) } as T)
+            (d) => ({ id: d.id, ...(d.data() as Omit<FirestoreDocType, "id">) })
           );
-          setData(items);
+
+          const sortedItems = items.sort((a, b) => {
+            if (a?.seq && b?.seq) {
+              return a.seq - b.seq; 
+            }
+            return 0;
+          });
+
+          setData(sortedItems);
+          // setData(items);
         }
       } catch (err) {
         console.error(err);
@@ -48,7 +57,7 @@ export function useFirestoreCollection<T extends { id: string }>(id?: string) {
     return () => {
       isMounted = false;
     };
-  }, [activeSection]);
+  }, [id, activeSection]);
 
   return { data, loading, error };
 }

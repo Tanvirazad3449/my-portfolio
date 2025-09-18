@@ -6,7 +6,7 @@ import MarkdownView from "@/components/custom/mainContent/MarkdownView";
 import MainContentContainer from "@/components/custom/mainContent/MainContentContainer";
 
 export default function About() {
-    const { data, loading, error } = useFirestoreCollection<FirestoreDocType>();
+    const { data, loading, error } = useFirestoreCollection();
 
     return (
         <MainContentContainer loading={loading} error={error}>

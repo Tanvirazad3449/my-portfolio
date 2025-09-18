@@ -7,7 +7,7 @@ import {
   SelectContent,
   SelectItem,
 } from '@/components/ui/select';
-import { Cloud, Moon, Sun, TreePine } from 'lucide-react';
+import { Moon, Sun, TreePine } from 'lucide-react';
 
 const themes = [
   { key: 'dark',   component:   <span aria-hidden><Moon className="w-5 h-5"/></span>},

@@ -7,6 +7,8 @@ type FirestoreDocType = {
   publishedOn?: string;
   company?: string;
   logo?: string;
+  icon?: string;
   location?: string;
   dateRange?: string;
+  seq?: number;
 };
