@@ -2,8 +2,8 @@
 :root {
   --color-base-bg: #F0F0F0;
   --color-base-fg: #000000;
+  --color-base-fg-soft: #00000030;
   --color-base-border: #FFFFFF;
-
 }
 
 /* 🌙 Dark Theme */
@@ -12,6 +12,7 @@ html.dark,
 [data-theme="dark"] {
   --color-base-bg: #242329;
   --color-base-fg: #FFFFFF;
+  --color-base-fg-soft: #FFFFFF30;
   --color-base-border: #2d2c34;
 }
 
@@ -20,16 +21,6 @@ html.forest,
 [data-theme="forest"] {
   --color-base-bg: #bec7bd;
   --color-base-fg: #222822;
+  --color-base-fg-soft: #22282230;
   --color-base-border: #dde2dd;
-
 }
-
-/* 
-color-base-bg
-- all backgrounds
-
-color-base-fg
-- all text colors
-
-
-*/

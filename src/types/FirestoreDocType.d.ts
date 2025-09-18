@@ -11,4 +11,5 @@ type FirestoreDocType = {
   location?: string;
   dateRange?: string;
   seq?: number;
+  list?: string;
 };
