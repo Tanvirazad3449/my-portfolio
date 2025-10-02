@@ -29,7 +29,7 @@ export default function About() {
                         <div className="flex flex-row gap-x-4">
 
                             <Button className="text-primary hover:text-primary/60 bg-primary/10 cursor-pointer hover:bg-primary/20 shadow-none justify-start"
-                                onClick={() => handleActiveSection(sections[4])}>My Skills</Button>
+                                onClick={() => handleActiveSection(sections[1])}>My Projects</Button>
 
                             <Button className="text-primary hover:text-primary/60 bg-primary/10 cursor-pointer hover:bg-primary/20 shadow-none justify-start"
                                 onClick={() => handleActiveSection(sections[5])}>Contact Me</Button>

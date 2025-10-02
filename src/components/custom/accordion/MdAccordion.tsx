@@ -20,7 +20,7 @@ export default function MdAccordion({
         <AccordionTrigger>
           <div className="w-full flex flex-row items-center cursor-pointer">
             <Image
-              src={logo || "./null.webp"}
+              src={logo || "/null.webp"}
               alt={company || ""}
               priority={true}
               width={45}
