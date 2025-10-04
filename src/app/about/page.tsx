@@ -3,12 +3,12 @@
 import { useFirestoreCollection } from "@/data/useFirestoreCollection";
 import Image from "next/image";
 import MainContentContainer from "@/components/custom/mainContent/MainContentContainer";
-import { Button } from "@/components/ui/button";
 import { sections, useSections } from "@/providers/SectionProvider";
+import CustomButton from "@/components/custom/button/CustomButton";
 
 export default function About() {
     const { data, loading, error } = useFirestoreCollection();
-  const { handleActiveSection } = useSections();
+    const { handleActiveSection } = useSections();
 
     return (
         <MainContentContainer loading={loading} error={error}>
@@ -27,12 +27,17 @@ export default function About() {
 
                         <p className="mb-4">{data[0]?.subtext}</p>
                         <div className="flex flex-row gap-x-4">
+                            <CustomButton
+                                text='My Projects'
+                                onClick={() => handleActiveSection(sections[1])}
+                                variant='primary'
+                            />
 
-                            <Button className="text-primary hover:text-primary/60 bg-primary/10 cursor-pointer hover:bg-primary/20 shadow-none justify-start"
-                                onClick={() => handleActiveSection(sections[1])}>My Projects</Button>
-
-                            <Button className="text-primary hover:text-primary/60 bg-primary/10 cursor-pointer hover:bg-primary/20 shadow-none justify-start"
-                                onClick={() => handleActiveSection(sections[5])}>Contact Me</Button>
+                            <CustomButton
+                                text='Contact Me'
+                                onClick={() => handleActiveSection(sections[5])}
+                                variant='secondary'
+                            />
                         </div>
                     </div>
                 </div>

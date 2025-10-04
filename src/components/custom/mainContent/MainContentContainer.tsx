@@ -11,47 +11,26 @@ type Props = {
   loading: boolean;
   error: FirestoreError | null;
 };
-
+export function FlashingBar() {
+  return (
+    <div className="w-full h-0.5 overflow-hidden relative">
+      <motion.div
+        className="absolute top-0 left-0 h-1 w-1/3 bg-gradient-to-r from-transparent to-primary/20"
+        animate={{ x: ["-200%", "400%"] }}
+        transition={{
+          repeat: Infinity,
+          duration: 1.2,
+          ease: "linear",
+        }}
+      />
+    </div>
+  );
+}
 function MainContentContainer({ children, loading = false, error }: Props) {
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.25 }}
-        className="h-full relative"
-        aria-busy={loading}
-      >
-        {/* Subtle top progress bar */}
-        <AnimatePresence>
-          {loading && (
-            <motion.div
-              key="topbar"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute  top-0 left-1/24 h-0.5 w-22/24 right-1/24 overflow-hidden"
-            >
-              <motion.div
-                className="absolute h-full w-1/4 bg-primary/80"
-                initial={{ x: -400 }}
-                animate={{ x: 400 }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 0.8,
-                  ease: "easeInOut",
-                }}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+      <div className="h-full relative">
 
-        <Card
-          className={`h-full p-0 pt-0 pb-0 md:pt-4 m-0 gap-y-0 md:pb-0 rounded-none border-none md:bg-border md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity
-            ${loading ? "opacity-80 pointer-events-none" : "opacity-100"}
-            `}
-        >
+        <Card className="h-full p-0 pt-0 pb-0 md:pt-4 m-0 gap-y-0 md:pb-0 rounded-none border-none md:bg-border md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity">
           {(error && error.message) ?
             <>
               <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">
@@ -65,18 +44,18 @@ function MainContentContainer({ children, loading = false, error }: Props) {
             :
             <>
               <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">
-                <MainContentHeader />
+                <MainContentHeader/>
               </CardHeader>
 
               <CardContent className="grow overflow-auto md:pt-2">
                 {children}
               </CardContent>
+        {loading && <FlashingBar/>}
             </>
           }
 
         </Card>
-      </motion.div>
-    </AnimatePresence>
+      </div>
   );
 }
 

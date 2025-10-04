@@ -75,7 +75,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Your name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Ada Lovelace" {...field} className="border-primary/20 placeholder:text-primary/40"/>
+                  <Input placeholder="Ada Lovelace" {...field} className="border-primary/30 placeholder:text-primary/80"/>
                 </FormControl>
                 <FormMessage/>
               </FormItem>
@@ -88,28 +88,29 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="you@example.com" {...field} className="border-primary/20 placeholder:text-primary/40"/>
+                  <Input type="email" placeholder="you@example.com" {...field} className="border-primary/30 placeholder:text-primary/80"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-        </div>
 
-        <FormField
+       
+ 
+          </div>
+          <FormField
           control={form.control}
           name="subject"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
-                <Input placeholder="How can I help?" {...field}  className="border-primary/20 placeholder:text-primary/40"/>
+                <Input placeholder="How can I help?" {...field}  className="border-primary/30 placeholder:text-primary/80"/>
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
-        />
-
+          />
         <FormField
           control={form.control}
           name="message"
@@ -119,7 +120,7 @@ export default function ContactForm() {
               <FormControl>
                 <Textarea
                   placeholder="Tell me a bit about your project or question…"
-                  className="min-h-[140px] resize-y border-primary/20 placeholder:text-primary/40"
+                  className="min-h-[140px] resize-y border-primary/30 placeholder:text-primary/80"
                   {...field}
                 />
               </FormControl>
@@ -139,9 +140,9 @@ export default function ContactForm() {
           )}
         />
 
-        <div className="flex items-center flex-col gap-3">
-          <Button type="submit" className="bg-primary/10 hover:bg-primary/20 cursor-pointer border w-full" disabled={status === "sending"}>
-            {status === "sending" ? "Sending…" : "Send message"}
+        <div className="flex items-start flex-col gap-3">
+          <Button type="submit" className="text-white hover:text-white/60 font-bold bg-secondary-foreground cursor-pointer hover:bg-secondary-foreground/90 shadow-none justify-center w-full md:w-auto" disabled={status === "sending"}>
+            {status === "sending" ? "Sending…" : "Send Email"}
           </Button>
           {status === "sent" && <p className="text-sm text-green-600">Thanks! I’ll get back to you soon.</p>}
           {status === "error" && <p className="text-sm text-red-600">Something went wrong. Please try again.</p>}

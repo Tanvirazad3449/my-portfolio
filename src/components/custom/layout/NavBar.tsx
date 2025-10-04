@@ -31,21 +31,18 @@ function NavList({
   className,
 }: Props) {
   return (
-    <nav className={className ?? "space-y-2 relative"}>
+    <nav className={className ?? "space-y-2 relative z-0"}>
       {sections.map((section) => {
         const item = (
           <div key={section} className="relative">
             {activeSection === section && (
               <Highlight
                 layoutId="highlight"
-                className="absolute inset-0 rounded-md text-primary bg-primary/10  cursor-pointer"
+                className="absolute inset-0 -z-10 rounded-md bg-secondary-foreground cursor-pointer"
               />
             )}
             <MotionButton
-              // whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              // variant="ghost"
-              className="text-primary hover:text-primary/60 bg-transparent cursor-pointer hover:bg-transparent w-full shadow-none justify-start"
+              className={`relative z-10 bg-transparent cursor-pointer hover:bg-transparent hover:text-primary w-full shadow-none justify-start ${activeSection === section ? "text-white font-bold hover:text-white" : "text-primary"}`}
               aria-current={activeSection === section ? "page" : undefined}
               onClick={() => onSelect(section)}
             >

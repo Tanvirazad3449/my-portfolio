@@ -6,6 +6,7 @@ import { CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { sections, useSections } from "@/providers/SectionProvider";
 import { usePathname, useRouter } from "next/navigation";
+import { FlashingBar } from "./MainContentContainer";
 
 type MainContentHeaderButtonTypes = {
   label: string;
@@ -19,7 +20,7 @@ export function MainContentHeaderButton({ label, onClick, leftIconComponent, rig
     <Button
       variant="default"
       size="sm"
-      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-2 md:-mr-4 -ml-3 shadow-none hover:bg-transparent font-light hover:text-primary text-primary/80 ${className}`}
+      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-2 md:-mr-4 -ml-3 shadow-none hover:bg-transparent hover:opacity-80 font-bold hover:text-primary ${className}`}
       aria-label={label}
       onClick={onClick}
     >
@@ -42,10 +43,12 @@ export default function MainContentHeader() {
       onClick={() => router.push(`/${activeSection.toLowerCase()}`)} />
   ) : (
     <div className="flex flex-row justify-between items-center w-full">
-      <CardTitle className={`font-bold`}>{activeSection}</CardTitle>
+
+      <CardTitle className={`font-bold md:text-3xl`}>{activeSection}</CardTitle>
+      
       <MainContentHeaderButton
         className="md:hidden"
-        label={`To ${nextSection}`}
+        label={`To My ${nextSection}`}
         rightIconComponent={<ArrowRight size={24} />}
         onClick={() => handleActiveSection(nextSection)} />
     </div>

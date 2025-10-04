@@ -63,7 +63,7 @@
   --primary-hover: var(--color-base-fg);
   --primary-foreground: var(--color-base-bg);
 
-  --secondary-foreground: var(--color-base-border);
+  --secondary-foreground: var(--color-base-button);
 
   --accent: var(--color-base-border);
   

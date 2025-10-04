@@ -16,9 +16,9 @@ export default function Blogs() {
         <MainContentContainer loading={loading} error={error}>
             <div className="flex flex-col gap-4 mt-2 pb-6">
                 {data.map((item) => (
-                    <div
+                    <a
                         key={item.id}
-                        className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium border-primary/10 p-4 rounded-lg hover:bg-primary/5"
+                        className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium bg-primary/5 p-4 rounded-lg hover:bg-primary/10"
                         onClick={() =>
                             router.push(`blogs/${item.id}`)
                         }
@@ -29,10 +29,10 @@ export default function Blogs() {
                             publishedOn={item.publishedOn}
                         />
 
-                    </div>
+                    </a>
                 ))}
                 {data?.length > 0 && <div
-                        className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium border-primary/10 p-4 rounded-lg hover:bg-primary/5"
+                        className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium border-primary/5 p-4 rounded-lg hover:bg-primary/5"
                     onClick={() => {
                         window.open(contacts[3].href, "_blank", "noopener,noreferrer")
                     }}
@@ -46,7 +46,7 @@ export default function Blogs() {
                         </div>
 
                         <div className="shrink-0 md:ml-auto text-left md:text-right -mt-1 mr-1">
-                            <MainContentHeaderButton rightIconComponent={<ArrowRight size={24} />} label="go to dev.to" onClick={() => null} />
+                            <MainContentHeaderButton rightIconComponent={<ArrowRight size={24} />} label="Open External Link" onClick={() => null} />
                         </div>
                     </div>
 

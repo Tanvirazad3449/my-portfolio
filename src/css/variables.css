@@ -1,26 +1,31 @@
 /* 🌞 Light Theme */
 :root {
-  --color-base-bg: #F0F0F0;
-  --color-base-fg: #000000;
+  --color-base-bg: #f3f3f3;
+  --color-base-fg: #282828;
   --color-base-fg-soft: #00000030;
-  --color-base-border: #FFFFFF;
+  --color-base-border: #ffffff;
+  --color-base-button: #6f44b4;
+
 }
 
 /* 🌙 Dark Theme */
 :root.dark,
 html.dark,
 [data-theme="dark"] {
-  --color-base-bg: #242329;
-  --color-base-fg: #FFFFFF;
+  --color-base-bg: #282828;
+  --color-base-fg: #ececec;
   --color-base-fg-soft: #FFFFFF30;
-  --color-base-border: #2d2c34;
+  --color-base-border: #1e1e1e;
+  --color-base-button: #845ec2;
 }
 
 /* 🌲 Forest Theme */
 html.forest,
 [data-theme="forest"] {
-  --color-base-bg: #bec7bd;
-  --color-base-fg: #222822;
+  --color-base-bg: #a3b18a;
+  --color-base-fg: #dad7cd;
   --color-base-fg-soft: #22282230;
-  --color-base-border: #dde2dd;
+  --color-base-border: #344e41;
+  --color-base-button: #588157;
+
 }
