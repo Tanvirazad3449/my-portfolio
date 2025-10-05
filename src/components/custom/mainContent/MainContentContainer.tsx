@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import MainContentHeader from "./MainContentHeader";
@@ -28,34 +28,34 @@ export function FlashingBar() {
 }
 function MainContentContainer({ children, loading = false, error }: Props) {
   return (
-      <div className="h-full relative">
+    <div className="h-full relative">
 
-        <Card className="h-full p-0 pt-0 pb-0 md:pt-4 m-0 gap-y-0 md:pb-0 rounded-none border-none md:bg-border md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity">
-          {(error && error.message) ?
-            <>
-              <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">
-                <CardTitle className={`text-2xl font-bold`}>Error</CardTitle>
-              </CardHeader>
+      <Card className="h-full p-0 pt-0 pb-0 md:pt-4 m-0 gap-y-0 md:pb-0 rounded-none border-none md:bg-border md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity">
+        {(error && error.message) ?
+          <>
+            <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">
+              <CardTitle className={`text-2xl font-bold`}>Error</CardTitle>
+            </CardHeader>
 
-              <CardContent className="grow overflow-auto pt-2">
-                <p className="text-red-500">{error.message || "Unknown error occured"}</p>
-              </CardContent>
-            </>
-            :
-            <>
-              <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">
-                <MainContentHeader/>
-              </CardHeader>
+            <CardContent className="grow overflow-auto pt-2">
+              <p className="text-red-500">{error.message || "Unknown error occured"}</p>
+            </CardContent>
+          </>
+          :
+          <>
+            <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">
+              <MainContentHeader />
+            </CardHeader>
 
-              <CardContent className="grow overflow-auto md:pt-2">
-                {children}
-              </CardContent>
-        {loading && <FlashingBar/>}
-            </>
-          }
+            <CardContent className="grow overflow-auto">
+              {children}
+            </CardContent>
+            {loading && <FlashingBar />}
+          </>
+        }
 
-        </Card>
-      </div>
+      </Card>
+    </div>
   );
 }
 

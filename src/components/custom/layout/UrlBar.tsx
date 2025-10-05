@@ -2,34 +2,40 @@
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Linkedin, Github, Rss, Facebook, Instagram, Link } from "lucide-react";
+import { LinkedinIcon, GithubIcon, DevToIcon, FacebookIcon, InstagramIcon, YouTubeIcon } from "./Icons";
+import { Link } from "lucide-react";
 
 export const contacts = [
   {
     href: "https://linkedin.com/in/tanvirazadwork",
-    label: "tanvirazadwork",
-    icon: Linkedin,
+    label: "LinkedIn",
+    icon: LinkedinIcon,
   },
   {
     href: "https://github.com/Tanvirazad3449",
-    label: "Tanvirazad3449",
-    icon: Github,
+    label: "GitHub",
+    icon: GithubIcon,
   },
   {
     href: "https://dev.to/tanvir_azad",
-    label: "tanvir_azad",
-    icon: Rss,
+    label: "Dev.to",
+    icon: DevToIcon,
   },
   {
     href: "https://www.facebook.com/tanvirazad49",
-    label: "tanvirazad49",
-    icon: Facebook,
+    label: "Facebook",
+    icon: FacebookIcon,
   },
   {
     href: "https://www.instagram.com/tanvir.azad/",
-    label: "tanvir.azad",
-    icon: Instagram,
+    label: "Instagram",
+    icon: InstagramIcon,
   },
+  {
+    href: "https://www.youtube.com/@tea_with_tanvir_azad",
+    label: "YouTube",
+    icon: YouTubeIcon
+  }
 ];
 
 function UrlList() {
@@ -43,7 +49,7 @@ function UrlList() {
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
           className="flex items-center gap-3 transition-colors hover:text-primary/60"
         >
-          <Icon className="w-5 h-5" />
+          <Icon />
           <span>{label}</span>
         </a>
       ))}
@@ -52,26 +58,26 @@ function UrlList() {
 }
 export function UrlSidebar() {
   return (
-    
-      <div className="md:hidden">
-       
-        <Sheet>
-          <SheetHeader className="display: hidden">
-            <SheetTitle></SheetTitle>
-            <SheetDescription></SheetDescription>
-          </SheetHeader>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" aria-label="Open navigation">
-              <Link size={24} />
-            </Button>
-          </SheetTrigger>
 
-          <SheetContent side="right" className="w-64 p-4 pt-14">
-            <UrlList />
-          </SheetContent>
-        </Sheet>
-      </div>
-    
+    <div className="md:hidden">
+
+      <Sheet>
+        <SheetHeader className="display: hidden">
+          <SheetTitle></SheetTitle>
+          <SheetDescription></SheetDescription>
+        </SheetHeader>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon" aria-label="Open navigation">
+            <Link size={24} />
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent side="right" className="w-64 p-4 pt-14">
+          <UrlList />
+        </SheetContent>
+      </Sheet>
+    </div>
+
   );
 }
 

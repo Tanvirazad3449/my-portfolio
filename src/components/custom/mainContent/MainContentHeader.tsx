@@ -6,7 +6,6 @@ import { CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { sections, useSections } from "@/providers/SectionProvider";
 import { usePathname, useRouter } from "next/navigation";
-import { FlashingBar } from "./MainContentContainer";
 
 type MainContentHeaderButtonTypes = {
   label: string;

@@ -35,11 +35,12 @@ export default function About() {
 
                             <CustomButton
                                 text='Contact Me'
-                                onClick={() => handleActiveSection(sections[5])}
+                                onClick={() => handleActiveSection(sections[6])}
                                 variant='secondary'
                             />
                         </div>
                     </div>
+
                 </div>
             }
         </MainContentContainer>

@@ -62,7 +62,7 @@ function SkillItem({ icon, title, content }: Omit<FirestoreDocType, "id">) {
 function SkillItemWithList({ title, list, subtext }: Omit<FirestoreDocType, "id">) {
   return (
 
-<div className="border border-primary/10 rounded-2xl p-4 mb-8">
+<div className="border border-primary/10 rounded-2xl px-4 mb-8">
 
     <Accordion type="single" collapsible className="mt-0">
       <AccordionItem value={title || ""}>

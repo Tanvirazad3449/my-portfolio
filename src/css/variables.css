@@ -22,8 +22,8 @@ html.dark,
 /* 🌲 Forest Theme */
 html.forest,
 [data-theme="forest"] {
-  --color-base-bg: #a3b18a;
-  --color-base-fg: #dad7cd;
+  --color-base-bg: #24362d;
+  --color-base-fg: #e2e0d8;
   --color-base-fg-soft: #22282230;
   --color-base-border: #344e41;
   --color-base-button: #588157;

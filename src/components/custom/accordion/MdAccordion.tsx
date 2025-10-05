@@ -17,7 +17,7 @@ export default function MdAccordion({
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value={company || ""}>
-        <AccordionTrigger>
+        <AccordionTrigger className="py-0 pb-6">
           <div className="w-full flex flex-row items-center cursor-pointer">
             <Image
               src={logo || "/null.webp"}
