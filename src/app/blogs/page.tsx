@@ -13,7 +13,7 @@ export default function Blogs() {
     return (
         <MainContentContainer loading={loading} error={error}>
             <div className="flex flex-col gap-4 pb-6">
-                {data.map((blog) => (<BlogItem key={blog.id} id={blog.id} publishedOn={blog.publishedOn} title={blog.title} teaser={blog.teaser}/>))}
+                {data.map((blog) => (<BlogItem key={blog.id} id={blog.id} subtitle={blog.subtitle} title={blog.title} teaser={blog.teaser}/>))}
                 
                 {data?.length > 0 && <div
                     className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium border-primary/5 p-4 rounded-lg hover:bg-primary/5"

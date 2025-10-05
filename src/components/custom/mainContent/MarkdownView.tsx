@@ -13,17 +13,21 @@ import "highlight.js/styles/github.css";
 import "@/css/markdown.css"
 type Props = {
   content: string | undefined;
+  heading?: string;
   className?: string; 
 };
 
 export default function MarkdownView({
   content,
+  heading,
   className = "prose max-w-none",
 }: Props) {
   return (
     <div
       className={`devto-article h-full w-full overflow-y-auto overflow-x-hidden ${className}`}
     >
+      {heading && <h1 className={`text-3xl font-bold mt-6 mb-4`}>{heading}</h1>}
+
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkEmoji]}
         rehypePlugins={[

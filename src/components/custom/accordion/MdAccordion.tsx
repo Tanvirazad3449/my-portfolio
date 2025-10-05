@@ -8,20 +8,19 @@ import Image from "next/image";
 import MarkdownView from "@/components/custom/mainContent/MarkdownView";
 
 export default function MdAccordion({
-  logo,
-  company,
-  location,
-  dateRange,
+  image,
+  title,
+  subtitle,
   content,
 }: Omit<FirestoreDocType, "id">) {
   return (
     <Accordion type="single" collapsible>
-      <AccordionItem value={company || ""}>
+      <AccordionItem value={title || ""}>
         <AccordionTrigger className="py-0 pb-6">
           <div className="w-full flex flex-row items-center cursor-pointer">
             <Image
-              src={logo || "/null.webp"}
-              alt={company || ""}
+              src={image || "/null.webp"}
+              alt={title || ""}
               priority={true}
               width={45}
               height={45}
@@ -29,9 +28,9 @@ export default function MdAccordion({
             />
             <div className="ml-4 text-left">
               <p className="font-semibold">
-                {company} ({location})
+                {title}
               </p>
-              <p className="opacity-70">{dateRange}</p>
+              <p className="opacity-70">{subtitle}</p>
             </div>
           </div>
         </AccordionTrigger>

@@ -1,10 +1,10 @@
 /* 🌞 Light Theme */
 :root {
   --color-base-bg: #f3f3f3;
-  --color-base-fg: #282828;
+  --color-base-fg: #000000;
   --color-base-fg-soft: #00000030;
   --color-base-border: #ffffff;
-  --color-base-button: #6f44b4;
+  --color-base-button: #6F55D8;
 
 }
 
@@ -12,20 +12,20 @@
 :root.dark,
 html.dark,
 [data-theme="dark"] {
-  --color-base-bg: #282828;
-  --color-base-fg: #ececec;
+  --color-base-bg: #1c1b1e;
+  --color-base-fg: #cccad0;
   --color-base-fg-soft: #FFFFFF30;
-  --color-base-border: #1e1e1e;
-  --color-base-button: #845ec2;
+  --color-base-border: #000000;
+  --color-base-button: #6F55D8;
 }
 
 /* 🌲 Forest Theme */
 html.forest,
 [data-theme="forest"] {
-  --color-base-bg: #24362d;
+  --color-base-bg: #344e41;
   --color-base-fg: #e2e0d8;
   --color-base-fg-soft: #22282230;
-  --color-base-border: #344e41;
-  --color-base-button: #588157;
+  --color-base-border: #24362d;
+  --color-base-button: #689867;
 
 }

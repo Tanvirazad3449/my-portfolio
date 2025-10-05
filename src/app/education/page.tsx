@@ -13,10 +13,9 @@ export default function Education() {
         data.map((item) => (
           <MdAccordion
             key={item.id}
-            logo={item.logo}
-            company={item.company}
-            location={item.location}
-            dateRange={item.dateRange}
+            image={item.image}
+            title={item.title}
+            subtitle={item.subtitle}
             content={item.content}
           />
 

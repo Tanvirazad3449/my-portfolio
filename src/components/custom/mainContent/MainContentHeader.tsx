@@ -19,7 +19,7 @@ export function MainContentHeaderButton({ label, onClick, leftIconComponent, rig
     <Button
       variant="default"
       size="sm"
-      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -mr-2 md:-mr-4 -ml-3 shadow-none hover:bg-transparent hover:opacity-80 font-bold hover:text-primary ${className}`}
+      className={`cursor-pointer bg-transparent p-0 m-0 h-fit px-0 pr-0 pl-0 -ml-3 shadow-none hover:bg-transparent hover:opacity-80 font-bold hover:text-primary ${className}`}
       aria-label={label}
       onClick={onClick}
     >
@@ -35,21 +35,27 @@ export default function MainContentHeader() {
   const { activeSection, handleActiveSection } = useSections()
   const nextSection = getNextSection(sections, activeSection)
   const showBackButton = pathname.replace(/^\/+/, "").split("/")[1]?.length > 0
-  return showBackButton ? (
-    <MainContentHeaderButton
-      label={`Back to ${activeSection}`}
-      leftIconComponent={<ArrowLeft size={24} />}
-      onClick={() => router.push(`/${activeSection.toLowerCase()}`)} />
-  ) : (
-    <div className="flex flex-row justify-between items-center w-full">
 
-      <CardTitle className={`font-bold md:text-3xl`}>{activeSection}</CardTitle>
-      
-      <MainContentHeaderButton
-        className="md:hidden"
-        label={`To My ${nextSection}`}
-        rightIconComponent={<ArrowRight size={24} />}
-        onClick={() => handleActiveSection(nextSection)} />
+  return (
+    <div className="flex flex-row justify-between items-start w-full px-4 md:px-0">
+
+      {showBackButton ? <MainContentHeaderButton
+        label={`Back to ${activeSection}`}
+        className="mb-4"
+        leftIconComponent={<ArrowLeft size={24} />}
+        onClick={() => router.push(`/${activeSection.toLowerCase()}`)} />
+        :
+        <>
+          {activeSection !== sections[0] && <CardTitle 
+          className={`font-bold md:text-3xl mb-8`}>{activeSection}</CardTitle>}
+
+          {activeSection !== sections[0] && <MainContentHeaderButton
+            className="md:hidden"
+            label={`To My ${nextSection}`}
+            rightIconComponent={<ArrowRight size={24} />}
+            onClick={() => handleActiveSection(nextSection)} />}
+        </>
+      }
     </div>
   );
 }
