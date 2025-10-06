@@ -31,9 +31,13 @@ export default function RootLayout({
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+
       >
 
-        <div className="md:h-screen bg-border md:bg-background p-0 px-0 md:p-6 md:px-6 flex flex-col">
+        <div className="h-screen bg-border md:bg-background p-0 px-0 md:p-6 md:px-6 flex flex-col"
+              style={{ backgroundImage: "url('/backdrop.svg')", backgroundSize:'100%', backgroundPositionX: 'left', backgroundPositionY:'100%',backgroundRepeat:'no-repeat'}}
+
+        >
           <SectionProvider>
             <HeaderBar title="Tanvir Azad" subTitle="Frontend Engineer" pills={["web", "android", "ios"]} />
             <div className="flex-1 min-h-0 flex gap-4">

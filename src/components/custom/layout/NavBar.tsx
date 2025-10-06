@@ -99,7 +99,7 @@ export function NavBar() {
   const { activeSection, handleActiveSection } = useSections();
 
   return (
-    <aside className="hidden md:flex flex-col w-56 rounded-2xl backdrop-blur bg-border p-4 h-full">
+    <aside className="hidden md:flex flex-col w-56 rounded-2xl bg-border/50 backdrop-saturate-100 backdrop-blur-sm p-4 h-full">
       <NavList activeSection={activeSection} onSelect={handleActiveSection} />
     </aside>
   );

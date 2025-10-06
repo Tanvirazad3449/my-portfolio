@@ -9,12 +9,13 @@ import rehypeRaw from "rehype-raw";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import { h } from "hastscript";
-import "highlight.js/styles/github.css";
-import "@/css/markdown.css"
+import "highlight.js/styles/vs2015.css"; // VS Code-like dark theme
+import "@/css/markdown.css";
+
 type Props = {
   content: string | undefined;
   heading?: string;
-  className?: string; 
+  className?: string;
 };
 
 export default function MarkdownView({
@@ -26,7 +27,7 @@ export default function MarkdownView({
     <div
       className={`devto-article h-full w-full overflow-y-auto overflow-x-hidden ${className}`}
     >
-      {heading && <h1 className={`text-3xl font-bold mt-6 mb-4`}>{heading}</h1>}
+      {heading && <h1 className="text-3xl font-bold mt-6 mb-4">{heading}</h1>}
 
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkEmoji]}
@@ -48,21 +49,17 @@ export default function MarkdownView({
           a: (props) => (
             <a {...props} target="_blank" rel="noopener noreferrer" />
           ),
-          // img: (props) => <img {...props} loading="lazy" decoding="async" />,
-          code: ({ node, className, children, ...props }) => {
-            
-            return (
-              <code
-                className={`block break-words whitespace-pre-wrap ${className ?? ""}`}
-                {...props}
-              >
-                {children}
-              </code>
-            );
-          },
+          code: ({ node, className, children, ...props }) => (
+            <code
+              className={`text-sm font-mono bg-[#1e1e1e] text-[#d4d4d4] px-1 py-0.5 rounded ${className ?? ""}`}
+              {...props}
+            >
+              {children}
+            </code>
+          ),
           pre: ({ children, ...props }) => (
             <pre
-              className="devto-pre break-words whitespace-pre-wrap overflow-x-hidden"
+              className="bg-[#1e1e1e] text-[#d4d4d4] rounded-lg p-4 my-4 overflow-x-auto font-mono text-sm shadow-sm"
               {...props}
             >
               {children}

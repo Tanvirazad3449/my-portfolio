@@ -28,9 +28,9 @@ export function FlashingBar() {
 }
 function MainContentContainer({ children, loading = false, error }: Props) {
   return (
-    <div className="h-full relative">
+    <div className="h-full">
 
-      <Card className="h-full p-0 m-0 gap-y-0 rounded-none border-none bg-border md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity">
+      <Card className="h-full p-0 m-0 gap-y-0 rounded-none border-none bg-border/50 backdrop-saturate-100 backdrop-blur-sm md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity">
         {(error && error.message) ?
           <>
             <CardHeader className="flex flex-row justify-between pb-4 md:pb-4">

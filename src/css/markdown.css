@@ -142,7 +142,7 @@
   white-space: inherit !important;    /* inherit pre-wrap */
   word-break: break-word;
   overflow-wrap: anywhere;
-  background-color: #FFFFFF;
+  background-color: transparent;
 display: block;
   white-space: inherit !important;
 }

@@ -84,7 +84,7 @@ export function UrlSidebar() {
 export default function UrlBar() {
 
   return (
-    <div className="hidden md:flex p-6 rounded-2xl border-none bg-border flex-col gap-6 sticky top-6 w-56">
+    <div className="hidden md:flex p-6 rounded-2xl border-none bg-border/50 backdrop-saturate-100 backdrop-blur-sm flex-col gap-6 sticky top-6 w-56">
       <UrlList />
     </div>
   );
