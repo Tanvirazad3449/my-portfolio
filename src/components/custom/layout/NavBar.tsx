@@ -12,7 +12,7 @@ import {
   SheetDescription,
   SheetClose,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { User, Gem, Briefcase, Menu, Link, GraduationCap, Rss, Shapes, Mail } from "lucide-react";
 
 type Props = {
   activeSection: string;
@@ -24,6 +24,26 @@ type Props = {
 const MotionButton = motion(Button);
 const Highlight = motion.div;
 
+function getIcon(iconName: string) {
+  switch (iconName) {
+    case sections[0]:
+      return <User />
+    case sections[1]:
+      return <Gem />
+    case sections[2]:
+      return <Briefcase />
+    case sections[3]:
+      return <GraduationCap />
+    case sections[4]:
+      return <Rss />
+    case sections[5]:
+      return <Shapes />
+    case sections[6]:
+      return <Mail />
+    default:
+      return <Link />
+  }
+}
 function NavList({
   activeSection,
   onSelect,
@@ -33,6 +53,7 @@ function NavList({
   return (
     <nav className={className ?? "space-y-2 relative z-0"}>
       {sections.map((section) => {
+        const Icon = getIcon(section)
         const item = (
           <div key={section} className="relative">
             {activeSection === section && (
@@ -46,6 +67,8 @@ function NavList({
               aria-current={activeSection === section ? "page" : undefined}
               onClick={() => onSelect(section)}
             >
+              {getIcon(section)}
+
               {section}
             </MotionButton>
           </div>
