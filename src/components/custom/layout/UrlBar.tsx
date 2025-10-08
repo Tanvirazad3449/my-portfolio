@@ -49,7 +49,7 @@ function UrlList() {
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
           className="flex items-center gap-3 transition-colors hover:text-primary/60"
         >
-          <Icon />
+          <Icon/>
           <span>{label}</span>
         </a>
       ))}

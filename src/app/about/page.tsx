@@ -41,7 +41,7 @@ export default function About() {
     return (
         <MainContentContainer loading={loading} error={error}>
             {data?.length > 0 &&
-                <div className="flex flex-col md:flex-row gap-x-6 gap-y-6">
+                <div className="flex flex-col md:flex-row gap-x-6 gap-y-6 pt-4 md:pt-6">
                     <Image
                         src={data[0]?.image || "/null.webp"}
                         alt="Tanvir Azad"

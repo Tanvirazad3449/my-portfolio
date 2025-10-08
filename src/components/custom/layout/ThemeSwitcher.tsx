@@ -46,7 +46,7 @@ export default function ThemeSwitcher() {
         className="
           w-10 h-10 p-0 
           flex items-center justify-center  shadow-none
-          appearance-none outline-0 rounded-lg cursor-pointer hover:bg-border
+          appearance-none outline-0 rounded-lg hover:text-secondary-foreground hover:bg-primary/20 cursor-pointer
           pr-0 [&>svg]:hidden
         "
       >

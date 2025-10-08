@@ -35,7 +35,7 @@ export default function RootLayout({
       >
 
         <div className="h-screen bg-border md:bg-background p-0 px-0 md:p-6 md:px-6 flex flex-col"
-              style={{ backgroundImage: "url('/backdrop.svg')", backgroundSize:'100%', backgroundPositionX: 'left', backgroundPositionY:'100%',backgroundRepeat:'no-repeat'}}
+              style={{ backgroundImage: "url('/new_backdrop.svg')", backgroundSize:'100%', backgroundPositionX: '0%', backgroundPositionY:'100%',backgroundRepeat:'no-repeat'}}
 
         >
           <SectionProvider>

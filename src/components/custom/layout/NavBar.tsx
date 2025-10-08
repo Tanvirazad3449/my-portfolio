@@ -63,7 +63,7 @@ function NavList({
               />
             )}
             <MotionButton
-              className={`relative z-10 bg-transparent cursor-pointer hover:bg-transparent hover:text-primary w-full shadow-none justify-start ${activeSection === section ? "text-white font-bold hover:text-white" : "text-primary"}`}
+              className={`relative z-10 bg-transparent cursor-pointer hover:bg-transparent hover:text-primary/60 w-full shadow-none justify-start ${activeSection === section ? "text-white font-bold hover:text-white" : "text-primary"}`}
               aria-current={activeSection === section ? "page" : undefined}
               onClick={() => onSelect(section)}
             >
