@@ -1,6 +1,6 @@
 /* 🌞 Light Theme */
 :root {
-  --color-base-bg: #ecebf3;
+  --color-base-bg: #f5f5f5;
   --color-base-fg: #000000;
   --color-base-fg-soft: #00000030;
   --color-base-border: #ffffff;
@@ -13,7 +13,7 @@
 html.dark,
 [data-theme="dark"] {
   --color-base-bg: #1c1b1e;
-  --color-base-fg: #cccad0;
+  --color-base-fg: #f5f5f5;
   --color-base-fg-soft: #FFFFFF30;
   --color-base-border: #000000;
   --color-base-button: #6F55D8;
