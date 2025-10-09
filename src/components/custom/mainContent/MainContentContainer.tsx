@@ -31,7 +31,7 @@ function MainContentContainer({ children, loading = false, error }: Props) {
   return (
     <div className="h-full">
 
-      <Card className="h-full p-0 py-0 pb-0 m-0 gap-y-0 rounded-none border-none bg-border/50 backdrop-saturate-100 backdrop-blur-sm md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity">
+      <Card className="h-full p-0 py-0 pb-0 m-0 gap-y-0 rounded-none border-none bg-border backdrop-saturate-100 backdrop-blur-sm md:rounded-2xl overflow-hidden flex flex-col shadow-none transition-opacity">
 
         {loading && <FlashingBar />}
         <CardHeader className="flex flex-row justify-between p-0" style={{ marginTop: 0 }}>

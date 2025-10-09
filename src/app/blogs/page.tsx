@@ -13,10 +13,18 @@ export default function Blogs() {
     return (
         <MainContentContainer loading={loading} error={error}>
             <div className="flex flex-col gap-4 pb-6">
-                {data.map((blog) => (<BlogItem key={blog.id} id={blog.id} subtitle={blog.subtitle} title={blog.title} teaser={blog.teaser}/>))}
+                {data.map((blog) => (<BlogItem 
+                key={blog.id} 
+                id={blog.id} 
+                subtitle={blog.subtitle} 
+                title={blog.title} 
+                teaser={blog.teaser}
+                content={blog.content}
+                />
+                ))}
                 
                 {data?.length > 0 && <div
-                    className="shadow-none overflow-hidden border flex flex-col cursor-pointer font-medium border-primary/5 p-4 rounded-lg hover:bg-primary/5"
+      className="bg-transparent border border-primary/20 hover:bg-primary/5 justify-between start cursor-pointer flex flex-col md:flex-row w-full py-4 pl-4 rounded-xl"
                     onClick={() => {
                         window.open(contacts[2].href, "_blank", "noopener,noreferrer")
                     }}

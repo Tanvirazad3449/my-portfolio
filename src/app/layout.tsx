@@ -5,6 +5,7 @@ import { SectionProvider } from "@/providers/SectionProvider";
 import HeaderBar from "@/components/custom/layout/HeaderBar";
 import UrlBar from "@/components/custom/layout/UrlBar";
 import { NavBar } from "@/components/custom/layout/NavBar";
+import { BlogContentProvider } from "@/providers/BlogContentProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,9 +36,11 @@ export default function RootLayout({
       >
 
         <div className="h-screen bg-border md:bg-background p-0 px-0 md:p-6 md:px-6 flex flex-col"
-              style={{ backgroundImage: "url('/new_backdrop.svg')", backgroundSize:'100%', backgroundPositionX: '0%', backgroundPositionY:'100%',backgroundRepeat:'no-repeat'}}
+              // style={{ backgroundImage: "url('/g6.svg')",  backgroundSize:'100%', backgroundPositionX: '0%', backgroundPositionY:'100%',backgroundRepeat:'no-repeat'}}
 
         >
+          <BlogContentProvider>
+
           <SectionProvider>
             <HeaderBar title="Tanvir Azad" subTitle="Frontend Engineer" pills={["web", "android", "ios"]} />
             <div className="flex-1 min-h-0 flex gap-4">
@@ -50,6 +53,7 @@ export default function RootLayout({
 
             </div>
           </SectionProvider>
+          </BlogContentProvider>
         </div>
       </body>
     </html>

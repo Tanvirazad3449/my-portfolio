@@ -5,7 +5,7 @@ import { collection, getDocs, FirestoreError, doc, getDoc } from "firebase/fires
 import { db } from "@/lib/firebase";
 import { useSections } from "@/providers/SectionProvider";
 
-export function useFirestoreCollection(id?: string) {
+export function useFirestoreCollection(id?: string, hasLocalContent?: boolean) {
   const { activeSection } = useSections();
   const [data, setData] = useState<FirestoreDocType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -17,6 +17,7 @@ export function useFirestoreCollection(id?: string) {
     (async () => {
       try {
         if (id) {
+          if(hasLocalContent) return 
           const ref = doc(db, activeSection.toLowerCase(), id);
           const snap = await getDoc(ref);
           if (!isMounted) return;
