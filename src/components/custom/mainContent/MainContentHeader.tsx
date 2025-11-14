@@ -35,32 +35,32 @@ export default function MainContentHeader() {
   const { activeSection, handleActiveSection } = useSections()
   const nextSection = getNextSection(sections, activeSection)
   const showBackButton = pathname.replace(/^\/+/, "").split("/")[1]?.length > 0
-  if(showBackButton){
-    return(
+  if (showBackButton) {
+    return (
       <div className="flex flex-row justify-between items-start w-full px-4 md:px-0 pt-4 pb-0">
 
-      <MainContentHeaderButton
-        label={`Back to ${activeSection}`}
-        className="mb-4"
-        leftIconComponent={<ArrowLeft size={24} />}
-        onClick={() => router.push(`/${activeSection.toLowerCase()}`)} />
-        </div>
-        
+        <MainContentHeaderButton
+          label={`Back to ${activeSection}`}
+          className="mb-4"
+          leftIconComponent={<ArrowLeft size={24} />}
+          onClick={() => router.push(`/${activeSection.toLowerCase()}`)} />
+      </div>
+
     )
-  } else if(activeSection !== sections[0]){
-    return(
-          <div className="flex flex-row justify-between items-start w-full pl-4 pr-2 md:px-0 py-4 md:py-6">
-            <CardTitle 
+  } else if (activeSection !== sections[0]) {
+    return (
+      <div className="flex flex-row justify-between items-start w-full pl-4 pr-2 md:px-0 py-4 md:py-6">
+        <CardTitle
           className={`font-bold md:text-3xl mb-0`}>{activeSection}</CardTitle>
-          <MainContentHeaderButton
-            className="md:hidden"
-            label={`To My ${nextSection}`}
-            rightIconComponent={<ArrowRight size={24} />}
-            onClick={() => handleActiveSection(nextSection)} />
-</div>
+        <MainContentHeaderButton
+          className="md:hidden"
+          label={`To My ${nextSection}`}
+          rightIconComponent={<ArrowRight size={24} />}
+          onClick={() => handleActiveSection(nextSection)} />
+      </div>
     )
 
-  }else return <></>
+  } else return <></>
 }
 
 function getNextSection(sections: string[], activeSection: string): string {

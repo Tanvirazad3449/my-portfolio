@@ -41,7 +41,7 @@ export default function About() {
     return (
         <MainContentContainer loading={loading} error={error}>
             {data?.length > 0 &&
-                <div className="flex flex-col md:flex-row gap-x-6 gap-y-6 pt-4 md:pt-6">
+                <div className="flex md:items-center flex-col gap-x-6 gap-y-6 pt-6 md:pt-12 md:align-middle align-middle md:h-max">
                     <Image
                         src={data[0]?.image || "/null.webp"}
                         alt="Tanvir Azad"
@@ -50,9 +50,9 @@ export default function About() {
                         height={200}
                         className="rounded-lg bg-border h-48 w-48"
                     />
-                    <div className="flex flex-col gap-y-4">
+                    <div className="flex flex-col md:items-center gap-y-4">
                         {data[0]?.subtitle && data[0]?.subtitle?.length > 0 && <RotateWords words={data[0]?.subtitle?.split(';')}/> }
-                        <h1 className="text-primary/80">{data[0]?.content}</h1>
+                        <p className="text-primary/80 md:max-w-2/3 md:text-center">{data[0]?.content}</p>
                         <div className="flex flex-row gap-x-4">
                             <CustomButton
                                 text='My Projects'
